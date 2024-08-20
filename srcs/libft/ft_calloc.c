@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlapique <mlapique@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 11:39:32 by mlapique          #+#    #+#             */
-/*   Updated: 2023/10/24 11:39:32 by mlapique         ###   ########.fr       */
+/*   Created: 2023/10/26 10:53:21 by ekrebs            #+#    #+#             */
+/*   Updated: 2023/12/04 18:23:48 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmeb, size_t size)
 {
-	char	*result;
-	size_t	overflowpro;
+	void	*address;
+	size_t	product;
 
-	if (!nmemb || !size)
+	if (!nmeb || !size)
 		return (malloc(0));
-	overflowpro = size * nmemb;
-	if (overflowpro / nmemb != size)
+	product = nmeb * size;
+	if (product / size != nmeb)
 		return (NULL);
-	result = malloc(overflowpro);
-	if (!result)
+	address = malloc(product);
+	if (!address)
 		return (NULL);
-	ft_bzero(result, overflowpro);
-	return (result);
+	ft_bzero(address, product);
+	return (address);
 }

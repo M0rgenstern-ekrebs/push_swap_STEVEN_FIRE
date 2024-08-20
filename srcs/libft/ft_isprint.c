@@ -3,19 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlapique <mlapique@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 09:07:30 by mlapique          #+#    #+#             */
-/*   Updated: 2023/10/19 15:52:26 by mlapique         ###   ########.fr       */
+/*   Created: 2023/10/27 10:55:10 by ekrebs            #+#    #+#             */
+/*   Updated: 2023/11/29 11:05:39 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
-		return (1);
-	else
-		return (0);
+		return (1024);
+	return (0);
 }

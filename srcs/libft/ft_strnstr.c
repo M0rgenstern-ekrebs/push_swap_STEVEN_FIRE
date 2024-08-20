@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlapique <mlapique@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 16:56:16 by mlapique          #+#    #+#             */
-/*   Updated: 2023/10/19 20:52:51 by mlapique         ###   ########.fr       */
+/*   Created: 2023/10/31 15:40:23 by ekrebs            #+#    #+#             */
+/*   Updated: 2023/12/04 18:20:00 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,20 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	size_t	lenlittle;
-	int		test;
+	size_t	len_little;
 
-	if ((!little || !big) && len == 0)
+	if (len == 0 && (!big || !little))
 		return (NULL);
+	if (!little[0])
+		return ((char *) big);
+	len_little = ft_strlen((const char *)little);
 	i = 0;
-	lenlittle = ft_strlen((char *)little);
-	if (lenlittle == 0)
-		return ((char *)&big[i]);
 	while (big[i] && i <= len)
 	{
-		if (i + lenlittle <= len)
+		if (i + len_little <= len)
 		{
-			test = ft_strncmp(&big[i], little, lenlittle);
-			if (test == 0)
-				return ((char *)&big[i]);
+			if (!ft_strncmp(&big[i], little, len_little))
+				return ((char *) &big[i]);
 		}
 		i++;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlapique <mlapique@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 11:38:59 by mlapique          #+#    #+#             */
-/*   Updated: 2023/10/24 11:38:59 by mlapique         ###   ########.fr       */
+/*   Created: 2023/11/15 12:08:09 by ekrebs            #+#    #+#             */
+/*   Updated: 2023/12/04 18:24:35 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (fd < 0)
+	char		digit;
+	long int	num;
+
+	if (fd < 0 || fd >= 1024)
 		return ;
-	if (n == -2147483648)
+	num = n;
+	if (num < 0)
 	{
-		ft_putstr_fd("-2147483648", fd);
-		return ;
-	}
-	if (n < 0)
-	{
+		num *= -1;
 		ft_putchar_fd('-', fd);
-		n *= -1;
-		ft_putnbr_fd(n, fd);
 	}
-	else if (n < 10)
-		ft_putchar_fd(n + '0', fd);
-	else
+	digit = '0' + num % 10;
+	if (num / 10 <= 0)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd((n % 10) + '0', fd);
+		ft_putchar_fd(digit, fd);
+		return ;
 	}
+	ft_putnbr_fd(num / 10, fd);
+	ft_putchar_fd(digit, fd);
+	return ;
 }

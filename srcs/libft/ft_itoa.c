@@ -3,72 +3,62 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlapique <mlapique@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 11:39:23 by mlapique          #+#    #+#             */
-/*   Updated: 2023/10/24 11:39:23 by mlapique         ###   ########.fr       */
+/*   Created: 2023/10/26 11:38:44 by ekrebs            #+#    #+#             */
+/*   Updated: 2023/11/29 11:05:43 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_len_nb(long n)
+static int	ft_set_size(unsigned int number, int sign)
 {
-	size_t	len_nb;
+	int	size;
 
-	len_nb = 0;
-	if (n < 0)
+	size = 0;
+	while (number > 0)
 	{
-		len_nb++;
-		n *= -1;
+		number /= 10;
+		size += 1;
 	}
-	while (n >= 1)
-	{
-		len_nb++;
-		n /= 10;
-	}
-	return (len_nb);
+	if (sign < 0)
+		size += 1;
+	return (size);
 }
 
-static char	*ft_tabcreation(char *result, long nbr, int len, int negative)
+static char	*ft_fill_tab(char *tab, int size, unsigned int number, int sign)
 {
-	if (nbr != 0)
-		result = malloc(sizeof(char) * (len + 1));
-	else
-		return (result = ft_strdup("0"));
-	if (!result)
-		return (0);
-	if (nbr < 0)
+	while (number > 0)
 	{
-		negative = -1;
-		nbr *= -1;
+		tab[size - 1] = ('0' + number % 10);
+		number /= 10;
+		size -= 1;
 	}
-	result[len] = '\0';
-	while (--len)
-	{
-		result[len] = (nbr % 10) + '0';
-		nbr /= 10;
-	}
-	if (negative == -1)
-		result[0] = '-';
-	else
-		result[0] = (nbr % 10) + '0';
-	return (result);
+	if (sign < 0)
+		tab[0] = '-';
+	return (tab);
 }
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	char	*result;
-	long	nbr;
-	int		negative;
+	char			*tab;
+	size_t			size;
+	unsigned int	number;
+	int				sign;
 
-	nbr = n;
-	len = ft_len_nb(nbr);
-	result = 0;
-	negative = 1;
-	result = ft_tabcreation(result, nbr, len, negative);
-	if (!result)
-		return (0);
-	return (result);
+	size = 0;
+	sign = 1;
+	if (n <= 0)
+		sign *= -1;
+	number = n * sign;
+	size = ft_set_size(number, sign);
+	tab = malloc((size + 1) * sizeof(char));
+	if (!tab)
+		return (NULL);
+	tab[size] = '\0';
+	tab = ft_fill_tab(tab, size, number, sign);
+	if (number == 0)
+		tab[0] = '0';
+	return (tab);
 }
