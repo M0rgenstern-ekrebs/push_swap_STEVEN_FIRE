@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_rotate.c                                       :+:      :+:    :+:   */
+/*   ft_rev_rotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:40 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/19 19:36:25 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/20 07:17:20 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 void	ft_rev_rotate(t_node **stack)
 {
@@ -18,8 +18,8 @@ void	ft_rev_rotate(t_node **stack)
 	t_node	*last;
 	t_node	*last_prev;
 
-	last = ft_get_stack_bottom(*stack);
-	last_prev = ft_get_stack_before_bottom(*stack);
+	last = ft_get_stack_last(*stack);
+	last_prev = ft_get_stack_last_prev(*stack);
 	tmp = *stack;
 	*stack = last;
 	(*stack)->next = tmp;

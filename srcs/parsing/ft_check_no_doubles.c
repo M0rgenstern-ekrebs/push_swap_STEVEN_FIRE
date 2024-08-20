@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_check_no_doubles.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlapique <mlapique@student.42.fr>          +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 16:54:14 by mlapique          #+#    #+#             */
-/*   Updated: 2023/11/02 17:01:50 by mlapique         ###   ########.fr       */
+/*   Created: 2024/08/20 05:49:37 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/20 05:55:55 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "parsing.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+t_exit_status	ft_check_no_double(char *argv[])
 {
-	t_list	*next;
+	int	i;
+	int	j;
 
-	if (!lst)
-		return ;
-	if (*del)
+	j = 2;
+	i = 1;
+	while (argv[i])
 	{
-		while (*lst)
+		while (argv[j])
 		{
-			next = (*lst)->next;
-			ft_lstdelone(*lst, (del));
-			*lst = next;
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+				return (ERR);
+			j++;
 		}
+		i++;
+		j = i + 1;
 	}
-	lst = NULL;
+	return (SUCCESS);
 }

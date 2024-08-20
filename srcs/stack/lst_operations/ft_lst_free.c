@@ -1,28 +1,27 @@
-/* ************************************************************************** */
+	/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlapique <mlapique@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 16:54:50 by mlapique          #+#    #+#             */
-/*   Updated: 2024/01/13 13:45:15 by mlapique         ###   ########.fr       */
+/*   Created: 2024/01/31 15:19:20 by mlapique          #+#    #+#             */
+/*   Updated: 2024/03/15 17:10:18 by mlapique         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../stack.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+//stk is hed node
+void	ft_lst_free(t_node *stk)
 {
-	t_list	*last;
+	t_node	*tmp;
 
-	if (!lst || !new)
-		return ;
-	if (*lst)
+	while (stk)
 	{
-		last = ft_lstlast(*lst);
-		last->next = new;
+		tmp = stk->next;
+		free(stk);
+		stk = tmp;
 	}
-	else
-		*lst = new;
+	stk = NULL;
 }

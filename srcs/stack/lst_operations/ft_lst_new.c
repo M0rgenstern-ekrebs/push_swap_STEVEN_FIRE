@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lst_new.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlapique <mlapique@student.42.fr>          +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 16:54:46 by mlapique          #+#    #+#             */
-/*   Updated: 2023/10/31 14:17:23 by mlapique         ###   ########.fr       */
+/*   Created: 2024/01/14 14:40:59 by mlapique          #+#    #+#             */
+/*   Updated: 2024/08/20 07:08:45 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../stack.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_node	*ft_lst_new(int nb)
 {
-	if (!lst || !new)
-		return ;
-	if (*lst)
-		new->next = *lst;
-	*lst = new;
+	t_node	*new;
+
+	new = malloc(sizeof(t_node));
+	if (!new)
+		return (NULL);
+	new->value = nb;
+	new->index = 0;
+	new->push_cost = -1;
+	new->ind_target = -1;
+	new->next = NULL;
+	return (new);
 }

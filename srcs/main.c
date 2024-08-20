@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:54 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/19 20:36:27 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/20 07:00:00 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 /**
  * brief : push_swap 
@@ -32,19 +31,20 @@ int	main(int argc, char *argv[])
 
 	if (argc == 0 + 1)
 		return (0);
-	if (ft_verif_parsing(argv) != SUCCESS)
+	if (ft_check_parsing(argv) != SUCCESS)
 		return (ft_error(ERR));
 
+	stk_a = NULL;
 	stk_b = NULL;
 	if (ft_ini_stk_from_argv(stk_a, argv, argc) != SUCCESS)
 		return (ERR);
 
-	if (ft_is_sorted_ascending(stk_a, stk_b) != true)
+	if (ft_stack_is_sorted_ascending(stk_a) != true)
 	{
 		if (argc == 3 + 1)
-			ft_sort_three(stk_a, stk_b);
+			ft_sort_three(stk_a);
 		else
 			ft_sort(stk_a, stk_b);
 	}
-	return (free_stack(stk_a), free_stack(stk_b), SUCCESS);
+	return (ft_free_stack(stk_a), ft_free_stack(stk_b), SUCCESS);
 }

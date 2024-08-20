@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:39:42 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/19 19:40:51 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/20 07:13:09 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 void	ft_swap(t_node **stk)
 {

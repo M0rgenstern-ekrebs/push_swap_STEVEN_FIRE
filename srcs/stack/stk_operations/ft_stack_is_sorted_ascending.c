@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_is_sorted_ascending.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:41:16 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/19 20:49:44 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/20 06:43:06 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 */
 bool	ft_stack_is_sorted_ascending(t_node *stk)
 {
-
-	return ();
+	(void) stk;
+	return (true);
 }

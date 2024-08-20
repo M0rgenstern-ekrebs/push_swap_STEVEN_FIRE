@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   solver.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:50 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/19 20:23:05 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/20 06:44:06 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SOLVER_H
 # define SOLVER_H
 # include "../stack/stack.h"
-# include "limits.h"
-# include "libft/libft.h"
 
 typedef struct s_utils
 {
@@ -26,11 +24,8 @@ typedef struct s_utils
 }				t_utils;
 
 // the utils
-int		get_ndmax(t_node **stack);
-t_node	*get_stack_bottom(t_node *stack);
-t_node	*get_stack_before_bottom(t_node *stack);
-t_node	*ft_lstlas(t_node *lst);
-int		is_sorted(t_node *stack_a, t_node *stackb);
+void	ft_sort(t_node *stk_a, t_node *stk_b);
+void	ft_sort_three(t_node *stk);
 
 
 

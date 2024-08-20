@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_free_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlapique <mlapique@student.42.fr>          +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 16:54:56 by mlapique          #+#    #+#             */
-/*   Updated: 2024/01/19 15:11:35 by mlapique         ###   ########.fr       */
+/*   Created: 2024/08/20 06:31:03 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/20 06:51:37 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../stack.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void    ft_free_stack(t_node *stk)
 {
-	if (!lst)
-		return (NULL);
-	while (lst)
-	{
-		if (lst->next == NULL)
-			return (lst);
-		lst = lst->next;
-	}
-	return (zzlst);
+    ft_lst_free(stk);
+    return ;
 }

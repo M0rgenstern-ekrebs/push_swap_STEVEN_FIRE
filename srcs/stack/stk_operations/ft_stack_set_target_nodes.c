@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_set_target_nodes.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:41:07 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/19 20:46:49 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/20 07:10:46 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_stack_target_nodes(t_node *stk)
 {
-
-	return ();
+	(void) stk;
+	return ;
 }

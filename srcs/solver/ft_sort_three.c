@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_three.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:13:13 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/19 20:40:00 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/20 07:07:45 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@
  */
 static void	case_ind_max_0(t_node *stk)
 {
-	t_node	*n0;
 	t_node	*n1;
 	t_node	*n2;
 
-	n0 = stk;
 	n1 = stk->next;
 	n2 = stk->next->next;
 	if(n1->value > n2->value)
@@ -32,8 +30,8 @@ static void	case_ind_max_0(t_node *stk)
 	}
 	else
 	{
-		ft_sa(stk);
-		ft_rva(stk);
+		ft_sa(&stk);
+		ft_rva(&stk);
 	}
 	return ;
 }
@@ -46,19 +44,17 @@ static void	case_ind_max_0(t_node *stk)
 static void	case_ind_max_1(t_node *stk)
 {
 	t_node	*n0;
-	t_node	*n1;
 	t_node	*n2;
 
 	n0 = stk;
-	n1 = stk->next;
 	n2 = stk->next->next;
 	if(n0->value > n2->value)
 	{
-		ft_sa(stk);
+		ft_sa(&stk);
 	}
 	else
 	{
-		ft_rva(stk);
+		ft_rva(&stk);
 	}
 	return ;
 }
@@ -72,19 +68,17 @@ static void	case_ind_max_2(t_node *stk)
 {
 	t_node	*n0;
 	t_node	*n1;
-	t_node	*n2;
 
 	n0 = stk;
 	n1 = stk->next;
-	n2 = stk->next->next;
 	if(n0->value > n1->value)
 	{
-		ft_ra(stk);
+		ft_ra(&stk);
 	}
 	else
 	{
-		ft_sa(stk);
-		ft_ra(stk);
+		ft_sa(&stk);
+		ft_ra(&stk);
 	}
 	return ;
 }
@@ -97,7 +91,7 @@ void	ft_sort_three(t_node *stk)
 {
     int	ind_max;
 
-    ind_max = ft_stack_ind_node_max(stk);
+    ind_max = ft_stack_ind_max(stk);
     if (ind_max == 0)
 		case_ind_max_0(stk);
     else if (ind_max == 1)

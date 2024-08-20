@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 18:27:05 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/19 20:51:27 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/20 06:56:50 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define STACK_H
 
 #include <stdlib.h>
-#include <stdbool.h>
+#include "../error.h"
 
 typedef struct s_node
 {
@@ -22,7 +22,7 @@ typedef struct s_node
 	int		index;
 	int		push_cost;
 	int		ind_target;
-	t_node	*next;
+	struct s_node	*next;
 }				t_node;
 
 //subject operations
@@ -55,6 +55,7 @@ void	ft_pb(t_node **stk_a, t_node **stk_b);
 
 //stk operations
 
+void    ft_free_stack(t_node *stk);
 t_node	*ft_get_stack_last_prev(t_node *stk);
 t_node	*ft_get_stack_last(t_node *stk);
 int		ft_stack_ind_max(t_node *stk);
@@ -67,9 +68,9 @@ void	ft_stack_target_nodes(t_node *stk);
 
 //lst operations
 
-void	ft_lst_add_back(t_node *lst, t_node *new);
+void	ft_lst_addback(t_node *lst, t_node *new);
 t_node	*ft_lst_last(t_node *lst);
-void	lst_free(t_node *stk);
-t_node	*lstnew(int nb);
+void	ft_lst_free(t_node *stk);
+t_node	*ft_lst_new(int nb);
 
 #endif

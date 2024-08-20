@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_length.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:41:13 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/19 20:46:25 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/20 07:10:31 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	ft_stack_length(t_node *stk)
 {
-
-	return ();
+	(void) stk;
+	return (0);
 }
