@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:54 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/20 10:51:42 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 11:28:27 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int argc, char *argv[])
 	stk_b = NULL;
 	if (ft_ini_stk_from_argv(stk_a, argv, argc) != SUCCESS)
 		return (ft_error(ERR_INI_STK_A));
-	if (ft_stack_is_sorted_ascending(stk_a) != true)
+	if (ft_stack_is_sorted_strict_ascending(stk_a) != true)
 	{
 		if (argc == 3 + 1)
 			ft_sort_three(stk_a);
@@ -48,5 +48,5 @@ int	main(int argc, char *argv[])
 	}
 	if (VERBOSE)
 		ft_printf("\n(%s): SUCCESS\n", __func__);
-	return (ft_free_stack(stk_a), ft_free_stack(stk_b), SUCCESS);
+	return (ft_free_stack(stk_a), ft_free_stack(stk_b), EXIT_SUCCESS);
 }

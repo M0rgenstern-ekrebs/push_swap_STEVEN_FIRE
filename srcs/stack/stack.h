@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 18:27:05 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 10:05:49 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 11:19:48 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_node	*ft_get_stack_last_prev(t_node *stk);
 t_node	*ft_get_stack_last(t_node *stk);
 int		ft_stack_ind_max(t_node *stk);
 int		ft_stack_ind_min(t_node *stk);
-bool	ft_stack_is_sorted_ascending(t_node *stk);
+bool	ft_stack_is_sorted_strict_ascending(t_node *stk);
 int		ft_stack_length(t_node *stk);
 int		ft_stack_median(t_node *stk);
 int		ft_stack_costs_analysis(t_node *stk);

@@ -9,6 +9,7 @@
 *.obj
 *.elf
 push_swap
+*.Identifier
 
 # Linker output
 *.ilk
