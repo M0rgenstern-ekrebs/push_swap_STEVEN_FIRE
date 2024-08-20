@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ind_cheapest.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 20:27:49 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 20:55:13 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/20 22:03:31 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,38 +26,44 @@ int	ft_cost_to_push(t_node	*a, t_node *stk_a, t_node	*stk_b, int ind_a)
 	int	median_a;
 	int	median_b;
 	int	cost;
-	int len_a_to_top;
-	int len_target_to_top;
+	cost = 1;
+	(void) cost;
+	// int len_a_to_top;
+	// int len_target_to_top;
 
 	median_a = ft_stack_median(stk_a);
 	median_b = ft_stack_median(stk_b);
-	if (a->ind_target >= median_b)
-		len_target_to_top = (ft_stack_length(stk_b) - a->ind_target) * -1;
-	else 
-		len_target_to_top = a->ind_target + 1;
-	if (ind_a >= median_a)
-		len_a_to_top = (ft_stack_length(stk_a) - ind_a) * -1;
-	else 
-		len_a_to_top = a->ind_target + 1;
+	(void) median_a;
+	(void) median_b;
+	(void) a;
+	(void) ind_a;
+	// if (a->ind_target >= median_b)
+	// 	len_target_to_top = (ft_stack_length(stk_b) - a->ind_target) * -1;
+	// else 
+	// 	len_target_to_top = a->ind_target + 1;
+	// if (ind_a >= median_a)
+	// 	len_a_to_top = (ft_stack_length(stk_a) - ind_a) * -1;
+	// else 
+	// 	len_a_to_top = a->ind_target + 1;
 
-	//prix overlap + prix seul + push
-	cost = 0;
-	if ((ind_a >= median_a) && (a->ind_target >= median_b))
-	{
+	// //prix overlap + prix seul + push
+	// cost = 0;
+	// if ((ind_a >= median_a) && (a->ind_target >= median_b))
+	// {
 		
-	}
-	else if (!(ind_a >= median_a) && !(a->ind_target >= median_b))
-	{
+	// }
+	// else if (!(ind_a >= median_a) && !(a->ind_target >= median_b))
+	// {
 		
-	}
-	else if ((ind_a >= median_a) && !(a->ind_target >= median_b))
-	{
+	// }
+	// else if ((ind_a >= median_a) && !(a->ind_target >= median_b))
+	// {
 		
-	}
-	else if (!(ind_a >= median_a) && (a->ind_target >= median_b))
-	{
+	// }
+	// else if (!(ind_a >= median_a) && (a->ind_target >= median_b))
+	// {
 		
-	}
+	// }
 	return (cost);
 }
 

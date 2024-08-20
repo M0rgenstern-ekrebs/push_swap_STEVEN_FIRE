@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:23:08 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 20:56:14 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/20 21:31:11 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static void	ft_naive_push(t_node **stk_a, t_node **stk_b)
 		ft_printf("\n(%s):\n\n", __func__);
 	ft_stack_set_target_nodes(*stk_a, *stk_b);
 	ind_cheapest = ft_ind_cheapest(*stk_a, *stk_b);
+	(void) ind_cheapest;
 }
 
 static void	ft_naive_counter_push(t_node **stk_a, t_node **stk_b)
@@ -43,6 +44,7 @@ static void	ft_naive_counter_push(t_node **stk_a, t_node **stk_b)
 		ft_printf("\n(%s):\n\n", __func__);
 	ft_stack_set_target_nodes(*stk_b, *stk_a);
 	ind_cheapest = ft_ind_cheapest(*stk_a, *stk_b);
+	(void) ind_cheapest;
 }
 /**
  * 
