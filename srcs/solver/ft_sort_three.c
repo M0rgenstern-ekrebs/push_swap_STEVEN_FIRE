@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_three.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:13:13 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 07:43:11 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 20:07:05 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "solver.h"
+#include "../push_swap.h"
 
 /**
  * 
  * if => 210
  * else => 201
  */
-static void	case_ind_max_0(t_node *stk)
+static void	case_ind_max_0(t_node **stk)
 {
 	t_node	*n1;
 	t_node	*n2;
 
-	n1 = stk->next;
-	n2 = stk->next->next;
+	n1 = (*stk)->next;
+	n2 = (*stk)->next->next;
 	if (n1->value > n2->value)
 	{
-		return ;
+		ft_ra(stk);
+		ft_sa(stk);
 	}
 	else
 	{
-		ft_sa(&stk);
-		ft_rva(&stk);
+		ft_ra(stk);
 	}
 	return ;
 }
@@ -41,20 +41,21 @@ static void	case_ind_max_0(t_node *stk)
  * if => 120
  * else => 021
  */
-static void	case_ind_max_1(t_node *stk)
+static void	case_ind_max_1(t_node **stk)
 {
 	t_node	*n0;
 	t_node	*n2;
 
-	n0 = stk;
-	n2 = stk->next->next;
+	n0 = *stk;
+	n2 = (*stk)->next->next;
 	if (n0->value > n2->value)
 	{
-		ft_sa(&stk);
+		ft_rva(stk);
 	}
 	else
 	{
-		ft_rva(&stk);
+		ft_sa(stk);
+		ft_ra(stk);
 	}
 	return ;
 }
@@ -64,21 +65,20 @@ static void	case_ind_max_1(t_node *stk)
  * if => 102
  * else =>012
  */
-static void	case_ind_max_2(t_node *stk)
+static void	case_ind_max_2(t_node **stk)
 {
 	t_node	*n0;
 	t_node	*n1;
 
-	n0 = stk;
-	n1 = stk->next;
+	n0 = *stk;
+	n1 = (*stk)->next;
 	if (n0->value > n1->value)
 	{
-		ft_ra(&stk);
+		ft_sa(stk);
 	}
 	else
 	{
-		ft_sa(&stk);
-		ft_ra(&stk);
+		return ;
 	}
 	return ;
 }
@@ -87,16 +87,48 @@ static void	case_ind_max_2(t_node *stk)
  * brief sorts the three elements of a stack (of exactly 3 elements)
  * 
  */
-void	ft_sort_three(t_node *stk)
+void	ft_sort_three(t_node **stk)
 {
 	int	ind_max;
 
-	ind_max = ft_stack_ind_max(stk);
+	if (VERBOSE)
+		ft_printf("\n(%s):\n", __func__);
+	ind_max = ft_stack_ind_max(*stk);
 	if (ind_max == 0)
 		case_ind_max_0(stk);
 	else if (ind_max == 1)
 		case_ind_max_1(stk);
 	else if (ind_max == 2)
 		case_ind_max_2(stk);
+	if (VERBOSE)
+	{
+		ft_print_stack(*stk, "A");
+		if(ft_stack_is_sorted_strict_ascending(*stk) == true)
+			ft_printf("\t  => is now sorted (sort_three)\n");
+		else
+			ft_printf("\t  => SORT_FAILURE\n");
+	}
+	return ;
+}
+
+/**
+ * brief sorts the three elements of a stack (of exactly 3 elements)
+ * 
+ */
+void	ft_sort_sort_three(t_node **stk)
+{
+	int	ind_max;
+
+	if (VERBOSE)
+		ft_printf("\n(%s):\n", __func__);
+	ind_max = ft_stack_ind_max(*stk);
+	if (ind_max == 0)
+		case_ind_max_0(stk);
+	else if (ind_max == 1)
+		case_ind_max_1(stk);
+	else if (ind_max == 2)
+		case_ind_max_2(stk);
+	if (VERBOSE)
+		ft_print_stack(*stk, "A");
 	return ;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 18:27:05 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 11:19:48 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 18:46:31 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include "../error.h"
+# include "../libft/libft.h"
 
 typedef struct s_node
 {
@@ -56,17 +57,12 @@ void	ft_pb(t_node **stk_a, t_node **stk_b);
 //stk operations
 
 void	ft_free_stack(t_node *stk);
-void	ft_print_stack(t_node *stk, char *name);
-void	ft_print_stack_datas(t_node *stk, char *name);
 t_node	*ft_get_stack_last_prev(t_node *stk);
 t_node	*ft_get_stack_last(t_node *stk);
 int		ft_stack_ind_max(t_node *stk);
 int		ft_stack_ind_min(t_node *stk);
-bool	ft_stack_is_sorted_strict_ascending(t_node *stk);
 int		ft_stack_length(t_node *stk);
 int		ft_stack_median(t_node *stk);
-int		ft_stack_costs_analysis(t_node *stk);
-void	ft_stack_target_nodes(t_node *stk);
 
 //lst operations
 

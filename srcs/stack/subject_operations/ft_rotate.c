@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:43 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/20 07:14:42 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 18:35:39 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
+/**
+ * rotate <== 
+ * Ex : 120 -> 201
+ * 
+ *  */ 
 void	ft_rotate(t_node **stk)
 {
 	t_node	*tmp;

@@ -3,44 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rev_rotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:40 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/20 07:17:20 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 18:35:39 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_rev_rotate(t_node **stack)
+/**
+ * rotate ==> 
+ * Ex : 120 -> 012
+ * 
+ *  */ 
+void	ft_rev_rotate(t_node **stk)
 {
 	t_node	*tmp;
 	t_node	*last;
 	t_node	*last_prev;
 
-	last = ft_get_stack_last(*stack);
-	last_prev = ft_get_stack_last_prev(*stack);
-	tmp = *stack;
-	*stack = last;
-	(*stack)->next = tmp;
+	last = ft_get_stack_last(*stk);
+	last_prev = ft_get_stack_last_prev(*stk);
+	tmp = *stk;
+	*stk = last;
+	(*stk)->next = tmp;
 	last_prev->next = NULL;
 }
 
-void	ft_rva(t_node **stack_a)
+void	ft_rva(t_node **stk_a)
 {
-	ft_rev_rotate(stack_a);
+	ft_rev_rotate(stk_a);
 	ft_putstr_fd("rra\n", 1);
 }
 
-void	ft_rvb(t_node **stack_b)
+void	ft_rvb(t_node **stk_b)
 {
-	ft_rev_rotate(stack_b);
+	ft_rev_rotate(stk_b);
 	ft_putstr_fd("rrb\n", 1);
 }
 
-void	ft_rvrv(t_node **stack_a, t_node **stack_b)
+void	ft_rvrv(t_node **stk_a, t_node **stk_b)
 {
-	ft_rev_rotate(stack_a);
-	ft_rev_rotate(stack_b);
+	ft_rev_rotate(stk_a);
+	ft_rev_rotate(stk_b);
 	ft_putstr_fd("rrr\n", 1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:39:25 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 07:12:55 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 19:52:34 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,25 @@
 
 void	ft_push(t_node **src, t_node **dest)
 {
-	t_node	*tmp;
+	t_node	*fa;
+	t_node	*fb;
 
+	fa = *src;
+	fb = *dest;
 	if (*src == NULL)
+	{
+		if (VERBOSE)
+			ft_printf("\n\t I might have just done an oopsie.\n");
 		return ;
-	tmp = (*src)->next;
-	(*src)->next = *dest;
-	*dest = *src;
-	*src = tmp;
+	}
+	(*src) = fa->next;
+	(*dest) = fa;
+	fa->next = fb;
+
+	// tmp = (*src)->next;
+	// (*src)->next = *dest;
+	// *dest = *src;
+	// *src = tmp;
 }
 
 void	ft_pa(t_node **stack_a, t_node **stack_b)

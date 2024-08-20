@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 18:27:09 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 10:50:00 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 18:49:45 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "libft/libft.h"
+# include "parsing/parsing.h"
 # include "solver/solver.h"
 # include "stack/stack.h"
-# include "parsing/parsing.h"
+# include "print/print.h"
 # include "error.h"
-# include "libft/libft.h"
 
 #endif

@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_stack.c                                   :+:      :+:    :+:   */
+/*   ft_print_stack_datas.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 09:11:41 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/20 10:50:51 by m0rgenstern      ###   ########.fr       */
+/*   Created: 2024/08/20 18:12:58 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/08/20 20:15:54 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stack.h"
-#include "../../libft/libft.h"
+#include "../push_swap.h"
 
 void	ft_print_how_many_tabs(int displayed_number)
 {
@@ -24,36 +23,27 @@ void	ft_print_how_many_tabs(int displayed_number)
 void	ft_print_stack_datas(t_node *stk, char *name)
 {
 	t_node	*tmp;
+	int		i;
 
 	ft_printf("\n\t(%s):\n\n", __func__);
 	tmp = stk;
 	ft_printf("\t    ───────── %s ──────────\n", name);
 	ft_printf("\t   │   i   │   value      │    i_target  │  push_cost  │");
-	ft_printf("  above_median? │\n");
+	ft_printf("    >= median?  │\n");
 	ft_printf("\t   │───────│──────────────│──────────────│─────────────│");
 	ft_printf("────────────────│\n");
+	if(!tmp)
+		ft_printf("\t       i s   n  u  l  l\n");
+	i = 0;
 	while (tmp)
 	{
-		ft_printf("\t   │   %d\t%d", tmp->index, tmp->value);
+		ft_printf("\t   │   %d\t%d", i, tmp->value);
 		ft_print_how_many_tabs(tmp->value);
 		ft_printf("%d\t\t%d", tmp->ind_target, tmp->push_cost);
-		ft_printf("\t\t%d\n", tmp->index >= ft_stack_median(stk));
+		ft_printf("\t\t%d\n", i >= ft_stack_median(stk));
+		i++;
 		tmp = tmp->next;
 	}
-}
-
-void	ft_print_stack(t_node *stk, char *name)
-{
-	t_node	*tmp;
-
-	ft_printf("\n\t(%s):\n\n", __func__);
-	tmp = stk;
-	ft_printf("\t    ───────── %s ──────────\n", name);
-	ft_printf("\t   │   i   │   value      │\n");
-	ft_printf("\t   │───────│──────────────│\n");
-	while (tmp)
-	{
-		ft_printf("\t   │   %d\t%d\n", tmp->index, tmp->value);
-		tmp = tmp->next;
-	}
+	ft_printf("\t  len %d\n", ft_stack_length(stk));
+	ft_printf("\t  med %d\n", ft_stack_median(stk));
 }

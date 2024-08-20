@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:39:42 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 07:13:09 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 19:52:59 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,22 @@
 
 void	ft_swap(t_node **stk)
 {
-	int	tmp;
+	t_node	*f;
+	t_node	*s;
+	t_node	*t;
 
 	if (stk == NULL || (*stk)->next == NULL)
+	{
+		if (VERBOSE)
+			ft_printf("\n\t I might have just done an oopsie.\n");
 		return ;
-	tmp = (*stk)->index;
-	(*stk)->index = (*stk)->next->index;
-	(*stk)->next->index = tmp;
+	}
+	f = *stk;
+	s = f->next;
+	t = s->next;
+	f->next = t;
+	s->next = f;
+	*stk = s;
 	return ;
 }
 

@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_stack_last.c                                :+:      :+:    :+:   */
+/*   print.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 19:29:13 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 18:35:39 by ekrebs           ###   ########.fr       */
+/*   Created: 2024/08/20 18:35:03 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/08/20 20:21:48 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stack.h"
+#ifndef PRINT_H
+# define PRINT_H
 
-//returns last from stk
-t_node	*ft_get_stack_last(t_node *stk)
-{
-	while (stk && stk->next)
-		stk = stk->next;
-	return (stk);
-}
+# include "../push_swap.h"
+
+//print functions
+
+void	ft_print_stack(t_node *stk, char *stk_name);
+void	ft_print_both_stacks(t_node *stk_a, t_node *stk_b);
+void	ft_print_stack_datas(t_node *stk, char *name);
+
+//util
+
+void	ft_print_body(t_node *a, t_node *b);
+
+#endif

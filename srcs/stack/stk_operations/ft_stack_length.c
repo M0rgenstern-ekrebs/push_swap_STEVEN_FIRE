@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_length.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:41:13 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 09:58:56 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 13:12:50 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 int	ft_stack_length(t_node *stk)
 {
-	t_node	*last;
+	t_node	*tmp;
 	int		len;
 
-	last = ft_get_stack_last(stk);
-	len = last->index + 1;
+	len = 0;
+	tmp = stk;
+	while (tmp)
+	{
+		len++;
+		tmp = tmp->next;
+	}
 	return (len);
 }

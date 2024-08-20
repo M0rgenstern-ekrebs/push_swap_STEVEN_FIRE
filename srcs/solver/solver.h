@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   solver.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:50 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/20 07:42:19 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 20:28:57 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SOLVER_H
 # define SOLVER_H
-# include "../stack/stack.h"
 
-typedef struct s_utils
-{
-	int	max;
-	int	theplus;
-	int	nbsend;
-	int	way_to_rotate;
-	int	nbinstack;
-}				t_utils;
+# include "../push_swap.h"
 
-// the utils
-void	ft_sort(t_node *stk_a, t_node *stk_b);
-void	ft_sort_three(t_node *stk);
+//sorts
 
+void	ft_sort(t_node **stk_a, t_node **stk_b);
+void	ft_sort_sort_three(t_node **stk);
+
+void	ft_sort_three(t_node **stk);
+
+//utils
+
+int		ft_ind_cheapest(t_node *stk_a, t_node *stk_b);
+void	ft_stack_set_target_nodes(t_node *stk_a, t_node *stk_b);
+bool	ft_stack_is_sorted_strict_ascending(t_node *stk);
 #endif

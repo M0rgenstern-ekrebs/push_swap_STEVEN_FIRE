@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 18:34:13 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 10:41:33 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 18:35:39 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "limits.h"
 
 # ifndef VERBOSE
-#  define VERBOSE 1
+#  define VERBOSE 66
 # endif
 
 typedef enum e_exit_status

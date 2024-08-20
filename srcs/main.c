@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:54 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/20 11:28:27 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 20:10:51 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char *argv[])
 {
 	t_node	*stk_a;
 	t_node	*stk_b;
-
+	
 	if (VERBOSE)
 		ft_printf("\n(%s)\n", __func__);
 	if (argc == 0 + 1)
@@ -37,14 +37,14 @@ int	main(int argc, char *argv[])
 		return (ft_error(ERR_PARSING));
 	stk_a = NULL;
 	stk_b = NULL;
-	if (ft_ini_stk_from_argv(stk_a, argv, argc) != SUCCESS)
+	if (ft_ini_stk_from_argv(&stk_a, argv, argc) != SUCCESS)
 		return (ft_error(ERR_INI_STK_A));
 	if (ft_stack_is_sorted_strict_ascending(stk_a) != true)
 	{
 		if (argc == 3 + 1)
-			ft_sort_three(stk_a);
+			ft_sort_three(&stk_a);
 		else
-			ft_sort(stk_a, stk_b);
+			ft_sort(&stk_a, &stk_b);
 	}
 	if (VERBOSE)
 		ft_printf("\n(%s): SUCCESS\n", __func__);

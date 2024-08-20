@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_is_sorted_strict_ascending.c              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:41:16 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 11:27:28 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 18:55:39 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stack.h"
+#include "../push_swap.h"
 
-/*
-*/
+/**
+ * brief : if (here > next) : fuck you
+ * 
+ */
 bool	ft_stack_is_sorted_strict_ascending(t_node *stk)
 {
 	t_node	*tmp;
@@ -21,9 +23,11 @@ bool	ft_stack_is_sorted_strict_ascending(t_node *stk)
 	tmp = stk;
 	while (tmp && tmp->next)
 	{
-		if (tmp->value <= tmp->next->value)
+		if (tmp->value > tmp->next->value)
 			return (false);
 		tmp = tmp->next;
 	}
+	if (VERBOSE)
+		ft_printf("\t  => is sorted (SUCCESS)\n");
 	return (true);
 }
