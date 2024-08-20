@@ -6,14 +6,14 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 06:31:03 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/20 06:51:37 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 07:39:43 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../stack.h"
 
-void    ft_free_stack(t_node *stk)
+void	ft_free_stack(t_node *stk)
 {
-    ft_lst_free(stk);
-    return ;
+	ft_lst_free(stk);
+	return ;
 }

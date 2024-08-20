@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:54 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/20 07:00:00 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 07:36:00 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,10 @@ int	main(int argc, char *argv[])
 		return (0);
 	if (ft_check_parsing(argv) != SUCCESS)
 		return (ft_error(ERR));
-
 	stk_a = NULL;
 	stk_b = NULL;
 	if (ft_ini_stk_from_argv(stk_a, argv, argc) != SUCCESS)
 		return (ERR);
-
 	if (ft_stack_is_sorted_ascending(stk_a) != true)
 	{
 		if (argc == 3 + 1)

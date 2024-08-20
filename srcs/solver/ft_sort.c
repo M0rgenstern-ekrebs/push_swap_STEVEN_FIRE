@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:23:08 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 06:37:01 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 07:43:38 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_sort(t_node *stk_a, t_node *stk_b)
 {
-    (void) stk_a;
-    (void) stk_b;
-    return ;
+	(void) stk_a;
+	(void) stk_b;
+	return ;
 }

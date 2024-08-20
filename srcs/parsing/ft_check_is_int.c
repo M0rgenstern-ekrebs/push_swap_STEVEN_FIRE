@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 05:49:41 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/20 06:50:17 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 07:42:05 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static char	*trim_sign_and_zeros(char *argv, int *sign)
 			*sign = -1;
 	}
 	while (argv[i] == '0' && argv[i + 1] != '\0')
-    {
+	{
 		i++;
-    }
+	}
 	return (ft_substr(argv, i, ft_strlen(argv)));
 }
 
@@ -55,7 +55,7 @@ static int	check_limits(char *value)
 			cmp = ft_strncmp("2147483647", value, len);
 		else
 			cmp = ft_strncmp("2147483648", value, len);
-	} 
+	}
 	return (cmp);
 }
 
