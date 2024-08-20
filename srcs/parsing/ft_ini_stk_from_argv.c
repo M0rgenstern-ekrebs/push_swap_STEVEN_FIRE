@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:32:22 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 07:41:25 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 10:06:16 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ t_exit_status	ft_ini_stk_from_argv(t_node *stk_a, char *argv[], int argc)
 			return (ft_free_stack(stk_a), ERR);
 		ft_lst_addback(stk_a, new);
 		i++;
+	}
+	if (VERBOSE)
+	{
+		ft_print_stack(stk_a, "A");
+		ft_print_stack_datas(stk_a, "A");
 	}
 	return (SUCCESS);
 }

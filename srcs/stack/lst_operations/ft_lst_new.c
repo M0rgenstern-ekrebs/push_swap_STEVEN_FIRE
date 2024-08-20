@@ -6,12 +6,13 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 07:40:30 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/20 07:40:40 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 09:29:21 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../stack.h"
 
+//creates an element for a lst (to be head or to add to back)
 t_node	*ft_lst_new(int nb)
 {
 	t_node	*new;

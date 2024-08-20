@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:54 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/20 07:36:00 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 09:19:22 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,17 @@ int	main(int argc, char *argv[])
 	t_node	*stk_a;
 	t_node	*stk_b;
 
+	#include <stdio.h>
+	if (VERBOSE)
+		printf("\n(%s)\n", __func__);
 	if (argc == 0 + 1)
 		return (0);
 	if (ft_check_parsing(argv) != SUCCESS)
-		return (ft_error(ERR));
+		return (ft_error(ERR_PARSING));
 	stk_a = NULL;
 	stk_b = NULL;
 	if (ft_ini_stk_from_argv(stk_a, argv, argc) != SUCCESS)
-		return (ERR);
+		return (ft_error(ERR_INI_STK_A));
 	if (ft_stack_is_sorted_ascending(stk_a) != true)
 	{
 		if (argc == 3 + 1)
@@ -44,5 +47,7 @@ int	main(int argc, char *argv[])
 		else
 			ft_sort(stk_a, stk_b);
 	}
+	if (VERBOSE)
+		printf("\n(%s): SUCCESS\n", __func__);
 	return (ft_free_stack(stk_a), ft_free_stack(stk_b), SUCCESS);
 }

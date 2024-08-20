@@ -24,6 +24,7 @@ SRCS = 	srcs/main.c		\
 		srcs/stack/stk_operations/ft_free_stack.c					\
 		srcs/stack/stk_operations/ft_get_stack_last_prev.c			\
 		srcs/stack/stk_operations/ft_get_stack_last.c				\
+		srcs/stack/stk_operations/ft_print_stack.c					\
 		srcs/stack/stk_operations/ft_stack_ind_max.c				\
 		srcs/stack/stk_operations/ft_stack_ind_min.c				\
 		srcs/stack/stk_operations/ft_stack_is_sorted_ascending.c	\
@@ -44,7 +45,15 @@ $(AR) :
 	make all -C ./srcs/libft
 
 $(NAME): $(OBJS) $(AR)
-	clear && $(CC) $(OBJS) $(CFLAGS) -o $(NAME) $(AR)
+	$(CC) $(OBJS) $(CFLAGS) -o $(NAME) $(AR)
+
+INT_MAX = +2147483647
+INT_MIN = -2147483648
+INPUTS = 1 -8000 56 $(INT_MAX) 4 +67 -66 54242 +0 -9 $(INT_MIN)
+test: $(OBJS) $(AR) project_re
+	$(CC) $(OBJS) $(CFLAGS) -D VERBOSE=1 -o $(NAME) $(AR)
+	clear
+	./$(NAME) $(INPUTS)
 
 clean:
 	make clean -C ./srcs/libft
@@ -54,14 +63,11 @@ fclean: clean
 	make fclean -C ./srcs/libft
 	@rm -f $(NAME)
 
-re: clear fclean all
+re: fclean all
 
-project_re: clear
+project_re:
 	@rm -f $(OBJS)
 	@rm -f $(NAME)
 	make all
 
-clear :
-	clear
-
-.PHONY: all clean fclean clear re
+.PHONY: all clean fclean re project_re test
