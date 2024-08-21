@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_body.c                                    :+:      :+:    :+:   */
+/*   ft_print_both_body.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 19:34:45 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 20:03:14 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 12:50:22 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,55 +20,58 @@ static void	ft_print_how_many_tabs(int nb_printed_chars)
 		ft_printf("\t\t\t");
 }
 
-static int	ft_print_body_a(t_node *a, t_node *b, int i, int printed)
+static int	ft_print_body_a(t_node *a, t_node *b, int i, t_pbi *infos)
 {
-	static int absence_b=0;
-
-	printed += ft_printf("\t   │   %d\t%d", i, a->value);
+	infos->nb_printed += ft_printf("\t   │   %d\t%d", i, a->value);
 	if (!b)
 	{
-		if (absence_b > 0)
-			absence_b++;
-		if (absence_b == 3)
+		if (infos->absence_b == 1)
 		{
-			ft_printf("\t\t\t\t     B  is  n u l l\n");
+			ft_printf("\t\t\t\t     B  is  n u l l");
 		}
-		else
-			ft_printf("\n");
+		if (infos->absence_b >= 0)
+			infos->absence_b++;
 	}
 	else
-		absence_b = -1;
-	return (printed);
+		infos->absence_b = -1;
+	return (infos->nb_printed);
 }
 
-static void	ft_print_body_b(t_node *a, t_node *b, int i, int printed)
+static void	ft_print_body_b(t_node *a, t_node *b, int i, t_pbi *infos)
 {
-	ft_print_how_many_tabs(printed);
+	ft_print_how_many_tabs(infos->nb_printed);
 	if (!a)
-		ft_printf("\t\t\t\t\t\t\t");
-	ft_printf("\t│   %d\t    %d\n", i, b->value);
+	{
+		if (infos->absence_a == 1)
+			ft_printf("\t\t\t\t\t\t\t");
+		infos->absence_a++;
+	}
+	ft_printf("\t│   %d\t    %d", i, b->value);
 }
 
-void	ft_print_body(t_node *a, t_node *b)
+void	ft_print_both_body(t_node *a, t_node *b)
 {
 	int		i;
-	int		printed;
+	t_pbi	infos;
 
 	i = 0;
-	printed = 0;
+	infos.nb_printed = 0;
+	infos.absence_a = 0;
+	infos.absence_b = 0;
 	while (a || b)
 	{
 		if (a)
 		{
-			printed += ft_print_body_a(a, b, i, printed);
+			ft_print_body_a(a, b, i, &infos);
 			a = a->next;	
 		}
 		if (b)
 		{
-			ft_print_body_b(a, b, i, printed);
+			ft_print_body_b(a, b, i, &infos);
 			b = b->next;
 		}
+		ft_printf("\n");
 		i++;
-		printed = 0;
+		infos.nb_printed = 0;
 	}
 }

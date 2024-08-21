@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:32:22 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 18:35:39 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 12:51:52 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ t_exit_status	ft_ini_stk_from_argv(t_node **stk_a, char *argv[], int argc)
 	}
 	if (VERBOSE)
 	{
-		ft_print_stack(*stk_a, "A");
 		ft_print_stack_datas(*stk_a, "A");
 	}
 	return (SUCCESS);

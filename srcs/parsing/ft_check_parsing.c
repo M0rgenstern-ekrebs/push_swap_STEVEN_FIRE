@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_parsing.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 05:33:04 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/20 10:52:06 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/21 12:53:05 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_print_args(char *argv[])
 {
 	int	i;
 
-	ft_printf("\n\t(%s):\n\t   ", __func__);
+	ft_printf("\t(%s):\n\n\t   ", __func__);
 	i = 1;
 	while (argv[i])
 	{

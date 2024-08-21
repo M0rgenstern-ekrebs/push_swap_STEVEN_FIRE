@@ -2,7 +2,7 @@ NAME = push_swap
 AR = srcs/libft/libft.a
 
 CC = cc
-CFLAGS = -Wextra -Wall -g3 -Werror
+CFLAGS = -Wextra -Wall -g3 #-Werror
 
 OBJS = $(SRCS:.c=.o)
 SRCS = 	srcs/main.c		\
@@ -41,7 +41,7 @@ SRCS = 	srcs/main.c		\
 		srcs/print/ft_print_stack.c				\
 		srcs/print/ft_print_both_stacks.c		\
 		srcs/print/ft_print_stack_datas.c		\
-		srcs/print/ft_print_body.c				\
+		srcs/print/ft_print_both_body.c			\
 		
 
 all: $(NAME)

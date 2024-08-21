@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_set_target_nodes.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:41:07 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 22:10:44 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/21 12:53:41 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_stack_set_target_nodes(t_node *stk_a, t_node *stk_b)
 
 	if (VERBOSE)
 	{
-		ft_printf("\n\t(%s):\n\n", __func__);
+		ft_printf("\t(%s):\n\n", __func__);
 		ft_print_both_stacks(stk_a, stk_b);
 	}
 	i = 0;

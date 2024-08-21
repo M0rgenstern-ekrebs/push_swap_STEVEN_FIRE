@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:39:25 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 19:52:34 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 13:00:07 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,17 @@ void	ft_push(t_node **src, t_node **dest)
 void	ft_pa(t_node **stack_a, t_node **stack_b)
 {
 	ft_push(stack_b, stack_a);
-	ft_putstr_fd("pa\n", 1);
+	if (VERBOSE)
+		ft_printf("\t\t\t\t\t (B  ->  PA)\n");
+	else
+		ft_putstr_fd("pa\n", 1);
 }
 
 void	ft_pb(t_node **stack_a, t_node **stack_b)
 {
 	ft_push(stack_a, stack_b);
-	ft_putstr_fd("pb\n", 1);
+	if (VERBOSE)
+		ft_printf("\t\t\t\t\t (A  ->  PB)\n");
+	else
+		ft_putstr_fd("pb\n", 1);
 }

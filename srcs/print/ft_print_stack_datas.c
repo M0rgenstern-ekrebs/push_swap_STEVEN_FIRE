@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_stack_datas.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 18:12:58 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 22:25:21 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/21 12:06:59 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_print_stack_datas(t_node *stk, char *name)
 	t_node	*tmp;
 	int		i;
 
-	ft_printf("\n\t(%s):\n\n", __func__);
+	//ft_printf("\n\t(%s):\n\n", __func__);
 	tmp = stk;
 	ft_printf("\t    ───────── %s ──────────\n", name);
 	ft_printf("\t   │   i   │   value      │    i_target  │  push_cost  │");
@@ -44,6 +44,6 @@ void	ft_print_stack_datas(t_node *stk, char *name)
 		i++;
 		tmp = tmp->next;
 	}
-	ft_printf("\t  len %d\n", ft_stack_length(stk));
-	ft_printf("\t  med %d\n", ft_stack_median(stk));
+	ft_printf("\t  len %s : %d\n", name, ft_stack_length(stk));
+	ft_printf("\t  med %s : %d\n", name, ft_stack_median(stk));
 }

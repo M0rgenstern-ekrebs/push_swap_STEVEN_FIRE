@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:40 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/20 18:35:39 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 12:59:56 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,27 @@ void	ft_rev_rotate(t_node **stk)
 void	ft_rva(t_node **stk_a)
 {
 	ft_rev_rotate(stk_a);
-	ft_putstr_fd("rra\n", 1);
+	if (VERBOSE)
+		ft_printf("\t\t\t\t\t (A  ->  RRA)\n");
+	else
+		ft_putstr_fd("rra\n", 1);
 }
 
 void	ft_rvb(t_node **stk_b)
 {
 	ft_rev_rotate(stk_b);
-	ft_putstr_fd("rrb\n", 1);
+	if (VERBOSE)
+		ft_printf("\t\t\t\t\t (B  ->  RRB)\n");
+	else
+		ft_putstr_fd("rrb\n", 1);
 }
 
 void	ft_rvrv(t_node **stk_a, t_node **stk_b)
 {
 	ft_rev_rotate(stk_a);
 	ft_rev_rotate(stk_b);
-	ft_putstr_fd("rrr\n", 1);
+	if (VERBOSE)
+		ft_printf("\t\t\t\t\t (A,B ->  RRR)\n");
+	else
+		ft_putstr_fd("rrr\n", 1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:23:08 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 22:58:59 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/21 12:04:39 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	ft_naive_counter_push(t_node **stk_a, t_node **stk_b)
  * brief : pushes the X firsts of a in b
  * X >= 3, we try 3 times & we stop pushing if there is only 3 left in a
  */
-static void	ft_push_the_three_firsts(t_node **stk_a, t_node **stk_b, int len_a)
+static void	ft_push_the_three_firsts(t_node **stk_a, t_node **stk_b, int *len_a)
 {
 	int i;
 
@@ -60,14 +60,14 @@ static void	ft_push_the_three_firsts(t_node **stk_a, t_node **stk_b, int len_a)
 	i = 0;
 	while(i < 3)
 	{
-		if(len_a <= 3)
+		if(*len_a <= 3)
 		{
 			if (VERBOSE)
 				ft_print_both_stacks(*stk_a, *stk_b);
 			return ;
 		}
 		ft_pb(stk_a, stk_b);
-		len_a--;
+		(*len_a)--;
 		i++;
 	}
 	if (VERBOSE)
@@ -80,14 +80,14 @@ void	ft_sort(t_node **stk_a, t_node **stk_b)
 	int	len_b;
 	
 	len_a = ft_stack_length(*stk_a);
-	ft_push_the_three_firsts(stk_a, stk_b, len_a);
+	ft_push_the_three_firsts(stk_a, stk_b, &len_a);
 	while (len_a > 3)
 	{
 		ft_naive_push(stk_a, stk_b);
 		len_a--;
 	}
 	if (len_a == 3)
-		ft_sort_sort_three(stk_a);
+		ft_sort_three(stk_a);
 	len_b = ft_stack_length(*stk_b);
 	while (len_b > 0)
 	{
