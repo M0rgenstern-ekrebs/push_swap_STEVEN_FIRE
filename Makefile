@@ -18,10 +18,14 @@ SRCS = 	srcs/main.c		\
 		\
 		srcs/solver/ft_sort_three.c					\
 		srcs/solver/ft_sort.c						\
+		srcs/solver/ft_sort_small.c					\
 		\
-		srcs/solver/utils/ft_ind_cheapest.c						\
-		srcs/solver/utils/ft_stack_set_target_nodes.c			\
-		srcs/solver/utils/ft_stack_is_sorted_strict_ascending.c	\
+		srcs/solver/utils/ft_ind_cheapest.c								\
+		srcs/solver/utils/ft_stack_set_target_nodes_closest_bigger.c	\
+		srcs/solver/utils/ft_stack_set_target_nodes_closest_smaller.c	\
+		srcs/solver/utils/ft_stack_is_sorted_strict_ascending.c			\
+		srcs/solver/utils/ft_push_the_firsts.c		\
+		srcs/solver/utils/ft_put_min_on_top.c		\
 		\
 		srcs/solver/sort_operations/ft_naive_counter_push.c	\
 		srcs/solver/sort_operations/ft_naive_push.c			\
@@ -34,15 +38,17 @@ SRCS = 	srcs/main.c		\
 		srcs/stack/lst_operations/ft_lst_free.c		\
 		srcs/stack/lst_operations/ft_lst_new.c		\
 		\
-		srcs/stack/stk_operations/ft_free_stack.c						\
-		srcs/stack/stk_operations/ft_get_node_i.c						\
-		srcs/stack/stk_operations/ft_get_stack_last_prev.c				\
-		srcs/stack/stk_operations/ft_get_stack_last.c					\
-		srcs/stack/stk_operations/ft_stack_ind_max.c					\
-		srcs/stack/stk_operations/ft_stack_ind_min.c					\
-		srcs/stack/stk_operations/ft_stack_length.c						\
-		srcs/stack/stk_operations/ft_stack_median.c						\
-		srcs/stack/stk_operations/ft_is_above_median.c					\
+		srcs/stack/stk_operations/ft_free_stack.c					\
+		srcs/stack/stk_operations/ft_get_node_i.c					\
+		srcs/stack/stk_operations/ft_get_stack_last_prev.c			\
+		srcs/stack/stk_operations/ft_get_stack_last.c				\
+		srcs/stack/stk_operations/ft_stack_ind_max.c				\
+		srcs/stack/stk_operations/ft_stack_ind_min.c				\
+		srcs/stack/stk_operations/ft_stack_length.c					\
+		srcs/stack/stk_operations/ft_stack_median.c					\
+		srcs/stack/stk_operations/ft_is_above_median.c				\
+		srcs/stack/stk_operations/ft_stack_get_min.c				\
+		srcs/stack/stk_operations/ft_stack_get_max.c				\
 		\
 		srcs/stack/subject_operations/ft_push.c				\
 		srcs/stack/subject_operations/ft_swap.c				\

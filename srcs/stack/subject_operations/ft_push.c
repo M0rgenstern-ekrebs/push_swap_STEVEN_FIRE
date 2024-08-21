@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:39:25 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 19:54:26 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 22:05:03 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_push(t_node **src, t_node **dest)
 	if (*src == NULL)
 	{
 		if (VERBOSE)
-			ft_printf("\n\t (%s) I might have just done an oopsie.\n", __func__);
+			ft_printf("\n\t (%s) just done an Oopsie\n", __func__);
 		return ;
 	}
 	fa->ind_target = -1;

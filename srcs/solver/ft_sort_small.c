@@ -1,28 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_above_median.c                               :+:      :+:    :+:   */
+/*   ft_sort_small.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 22:22:20 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/21 22:10:31 by m0rgenstern      ###   ########.fr       */
+/*   Created: 2024/08/21 21:50:33 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/21 22:04:09 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 /**
  * 
- * brief : tells if ind is in the first half
+ * brief : sorts by ascending values
  * 
  */
-bool	ft_is_above_median(t_node *stk, int ind)
+static void	ft_sort_two(t_node **stk_a)
 {
-	int	median;
+	t_node	*n0;
+	t_node	*n1;
 
-	median = ft_stack_median(stk);
-	if (ind < median)
-		return (true);
-	return (false);
+	n0 = *stk_a;
+	n1 = n0->next;
+	if (n0->value > n1->value)
+		*stk_a = n1;
+	return ;
+}
+
+/**
+ * 
+ * brief : sorts by ascending values
+ * 
+ */
+void	ft_sort_small(t_node **stk_a, int argc)
+{
+	if (argc == 2 + 1)
+		ft_sort_two(stk_a);
+	if (argc == 3 + 1)
+		ft_sort_three(stk_a, "A");
+	return ;
 }

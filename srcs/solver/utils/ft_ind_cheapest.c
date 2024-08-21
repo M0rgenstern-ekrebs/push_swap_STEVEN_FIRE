@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ind_cheapest.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 20:27:49 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 19:43:41 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 22:32:13 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_node *stk_b, int ind_a)
  * 
  * returns ind of the cheapest to push in stk_a to stk_b
  * 
- * 
+ * could optimize by leaving early if cost == 0 or cost == 1
  */
 int	ft_ind_cheapest(t_node *stk_a, t_node *stk_b)
 {

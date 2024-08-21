@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_above_median.c                               :+:      :+:    :+:   */
+/*   ft_get_node_with_value.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 22:22:20 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/21 22:10:31 by m0rgenstern      ###   ########.fr       */
+/*   Created: 2024/08/22 00:00:11 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/22 00:01:35 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../stack.h"
 
 /**
  * 
- * brief : tells if ind is in the first half
+ * returns address of the i th node;
+ * returns first if failure
  * 
  */
-bool	ft_is_above_median(t_node *stk, int ind)
+t_node	*ft_get_node_with_value(t_node *stk, int value)
 {
-	int	median;
+	t_node	*tmp;
 
-	median = ft_stack_median(stk);
-	if (ind < median)
-		return (true);
-	return (false);
+	tmp = stk;
+	while (tmp)
+	{
+		if (tmp->value == value)
+			return (tmp);
+		tmp = tmp->next;
+	}
+	if (VERBOSE)
+		ft_printf(" (%s) : I did an oopsie", __func__);
+	return (stk);
 }

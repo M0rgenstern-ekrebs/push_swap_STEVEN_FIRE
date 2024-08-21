@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 10:42:54 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/21 20:16:23 by ekrebs           ###   ########.fr       */
+/*   Created: 2024/01/10 10:42:54 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/08/21 22:07:40 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ int	main(int argc, char *argv[])
 		return (ft_error(ERR_INI_STK_A));
 	if (ft_stack_is_sorted_strict_ascending(stk_a) != true)
 	{
-		if (argc == 3 + 1)
-			ft_sort_three(&stk_a, "A");
+		if (argc <= 3 + 1)
+			ft_sort_small(&stk_a, argc);
 		else
 			ft_sort(&stk_a, &stk_b);
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:23:08 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 19:42:33 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/22 00:53:20 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,34 @@ static void	ft_verbose_check(t_node *stk_a)
 	}
 }
 
-/**
- * 
- * brief : pushes the X firsts of a in b
- * X >= 3, we try 3 times & we stop pushing if there is only 3 left in a
- */
-static void	ft_push_the_two_firsts(t_node **stk_a, t_node **stk_b, int *len_a)
+static void ft_push_sort_a_to_b(t_node **stk_a, t_node **stk_b)
 {
-	int	i;
+	int	len_a;
 
-	if (VERBOSE)
-		ft_printf("\n(%s):\n", __func__);
-	i = 0;
-	while (i < 2)
+	len_a = ft_stack_length(*stk_a);
+	ft_push_the_firsts(stk_a, stk_b, &len_a);
+	while (len_a > 3)
 	{
-		if (*len_a <= 3)
-		{
-			if (VERBOSE)
-				ft_print_both_stacks(*stk_a, *stk_b);
-			return ;
-		}
-		ft_pb(stk_a, stk_b);
-		(*len_a)--;
-		i++;
+		ft_naive_push(stk_a, stk_b);
+		len_a--;
+	}
+	if (VERBOSE)
+	{
+		ft_printf("\n===============================================\n");
+		ft_printf("\n\t\t\tHalftway there Baby !\n");
+		ft_printf("\n===============================================\n");
+	}
+}
+
+static void ft_push_sort_b_to_a(t_node **stk_a, t_node **stk_b)
+{
+	int	len_b;
+
+	len_b = ft_stack_length(*stk_b);
+	while (len_b > 0)
+	{
+		ft_naive_counter_push(stk_a, stk_b);
+		len_b--;
 	}
 	if (VERBOSE)
 		ft_print_both_stacks(*stk_a, *stk_b);
@@ -55,34 +60,22 @@ static void	ft_push_the_two_firsts(t_node **stk_a, t_node **stk_b, int *len_a)
 
 /**
  * 
- * target node is closest smaller
+ * brief: sorts stk_a by ascending values;
+ * 
+ * 
+ 	#include <stdio.h>
+	ft_printf("\ntype and press enter to continue\n");
+	scanf(" adfshdf ");
  * 
  */
 void	ft_sort(t_node **stk_a, t_node **stk_b)
 {
-	int	len_a;
-	int	len_b;
-
-	len_a = ft_stack_length(*stk_a);
-	ft_push_the_two_firsts(stk_a, stk_b, &len_a);
-	while (len_a > 3)
-	{
-		ft_naive_push(stk_a, stk_b);
-		len_a--;
-	}
+	ft_push_sort_a_to_b(stk_a, stk_b);
 	ft_sort_three(stk_a, "A");
 	if (VERBOSE)
 		ft_print_both_stacks(*stk_a, *stk_b);
-	len_b = ft_stack_length(*stk_b);
-	while (len_b > 0)
-	{
-		ft_naive_counter_push(stk_b, stk_a);
-		len_b--;
-		if (VERBOSE && len_b < 5)
-			exit(42);
-	}
-	if (VERBOSE)
-		ft_print_both_stacks(*stk_a, *stk_b);
+	ft_push_sort_b_to_a(stk_a, stk_b);
+	ft_put_min_on_top(stk_a);
 	ft_verbose_check(*stk_a);
 	return ;
 }

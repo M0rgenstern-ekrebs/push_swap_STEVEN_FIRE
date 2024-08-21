@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 18:27:05 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 15:07:55 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/22 00:21:26 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int		ft_stack_ind_min(t_node *stk);
 int		ft_stack_length(t_node *stk);
 int		ft_stack_median(t_node *stk);
 bool	ft_is_above_median(t_node *stk, int ind);
+t_node	*ft_stack_get_max(t_node *stk);
+t_node	*ft_stack_get_min(t_node *stk);
 
 //lst operations
 

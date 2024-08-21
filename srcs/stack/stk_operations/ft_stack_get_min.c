@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_above_median.c                               :+:      :+:    :+:   */
+/*   ft_stack_get_min.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 22:22:20 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/21 22:10:31 by m0rgenstern      ###   ########.fr       */
+/*   Created: 2024/08/22 00:08:56 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/22 00:16:47 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../stack.h"
 
-/**
- * 
- * brief : tells if ind is in the first half
- * 
- */
-bool	ft_is_above_median(t_node *stk, int ind)
+t_node	*ft_stack_get_min(t_node *stk)
 {
-	int	median;
+	t_node	*tmp;
+    t_node  *min;
+    int     i;
 
-	median = ft_stack_median(stk);
-	if (ind < median)
-		return (true);
-	return (false);
+	tmp = stk;
+	min = tmp;
+    i = 0;
+	while (tmp)
+	{
+		if (tmp->value < min->value)
+        {
+            min = tmp;
+            min->ind = i;
+        }
+        i++;
+		tmp = tmp->next;
+	}
+	return (min);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rotator.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 16:20:26 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 19:54:06 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 23:02:12 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	solo_rotate_a(t_node **stk, t_node *new_top)
 		{
 			while (*stk != new_top)
 			{
-				ft_ra(stk);
+				ft_rva(stk);
 				moved++;
 			}
 		}
@@ -84,7 +84,9 @@ static int	solo_rotate_b(t_node **stk, t_node *new_top)
 
 /**
  * 
- * brief: rotates stk_a and stk_b in the same sens 
+ * brief: wants to push cheapest stk_a above it's stk_b target
+ * 
+ * rotates stk_a and stk_b in the same sens 
  * (either <= if both abose med or => if both under) 
  * until either cheapest or target or both are on top of their stk
  * 
