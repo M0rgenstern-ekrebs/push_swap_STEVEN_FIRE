@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 05:49:41 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/20 07:42:05 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 01:33:08 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	check_limits(char *value)
 		else
 			cmp = ft_strncmp("2147483648", value, len);
 	}
-	return (cmp);
+	return (free(value), cmp);
 }
 
 t_exit_status	ft_check_is_int(char *argv[])
