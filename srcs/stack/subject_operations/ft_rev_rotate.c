@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:40 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/21 12:59:56 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 19:55:15 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * rotate ==> 
  * Ex : 120 -> 012
  * 
- *  */ 
+ **/
 void	ft_rev_rotate(t_node **stk)
 {
 	t_node	*tmp;
@@ -31,30 +31,45 @@ void	ft_rev_rotate(t_node **stk)
 	last_prev->next = NULL;
 }
 
+/**
+ * rotate ==> 
+ * Ex : 120 -> 012
+ * 
+ **/
 void	ft_rva(t_node **stk_a)
 {
 	ft_rev_rotate(stk_a);
 	if (VERBOSE)
-		ft_printf("\t\t\t\t\t (A  ->  RRA)\n");
+		ft_printf("\t\t|\t\t\t(A   =>  RRA)\n");
 	else
 		ft_putstr_fd("rra\n", 1);
 }
 
+/**
+ * rotate ==> 
+ * Ex : 120 -> 012
+ * 
+ **/
 void	ft_rvb(t_node **stk_b)
 {
 	ft_rev_rotate(stk_b);
 	if (VERBOSE)
-		ft_printf("\t\t\t\t\t (B  ->  RRB)\n");
+		ft_printf("\t\t\t\t\t(B   =>  RRB)\t\t\t|\n");
 	else
 		ft_putstr_fd("rrb\n", 1);
 }
 
+/**
+ * rotate ==> 
+ * Ex : 120 -> 012
+ * 
+ **/
 void	ft_rvrv(t_node **stk_a, t_node **stk_b)
 {
 	ft_rev_rotate(stk_a);
 	ft_rev_rotate(stk_b);
 	if (VERBOSE)
-		ft_printf("\t\t\t\t\t (A,B ->  RRR)\n");
+		ft_printf("\t\t|\t\t\t(A,B  =>  RRR)\t\t\t|\n");
 	else
 		ft_putstr_fd("rrr\n", 1);
 }

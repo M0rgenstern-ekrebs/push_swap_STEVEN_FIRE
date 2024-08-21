@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_addback.c                                   :+:      :+:    :+:   */
+/*   ft_get_node_i.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 19:28:06 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 15:07:55 by ekrebs           ###   ########.fr       */
+/*   Created: 2024/08/21 14:27:14 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/08/21 19:57:47 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../stack.h"
 
-//adds to the back of an existing lst
-void	ft_lst_addback(t_node *lst, t_node *new)
+/**
+ * 
+ * returns address of the i th node;
+ * returns first if failure
+ * 
+ */
+t_node	*ft_get_node_i(t_node *stk, int ind)
 {
-	t_node	*last;
+	t_node	*tmp;
+	int		i;
 
-	if (!new)
-		return ;
-	if (!lst)
+	tmp = stk;
+	i = 0;
+	while (tmp && i <= ind)
 	{
-		lst = new;
-		return ;
+		if (i == ind)
+			return (tmp);
+		i++;
+		tmp = tmp->next;
 	}
-	last = ft_lst_last(lst);
-	new->ind = last->ind + 1;
-	last->next = new;
+	if (VERBOSE)
+		ft_printf(" (%s) : I did an oopsie", __func__);
+	return (stk);
 }

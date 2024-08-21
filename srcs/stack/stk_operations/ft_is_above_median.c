@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_above_median.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 22:22:20 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/20 22:32:13 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/21 19:57:12 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 /**
  * 
- * brief : tells if index is in the first half
+ * brief : tells if ind is in the first half
  * 
  */
-bool	ft_is_above_median(t_node *stk, int index)
+bool	ft_is_above_median(t_node *stk, int ind)
 {
-	int median = ft_stack_median(stk);
-	if(index <= median)
+	int	median;
+
+	median = ft_stack_median(stk);
+	if (ind <= median)
 		return (true);
 	return (false);
 }

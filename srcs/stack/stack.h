@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 18:27:05 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 22:30:30 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/21 15:07:55 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 typedef struct s_node
 {
 	int				value;
-	int				index;
+	int				ind;
 	int				push_cost;
 	int				ind_target;
 	struct s_node	*next;
@@ -57,13 +57,14 @@ void	ft_pb(t_node **stk_a, t_node **stk_b);
 //stk operations
 
 void	ft_free_stack(t_node *stk);
+t_node	*ft_get_node_i(t_node *stk, int ind);
 t_node	*ft_get_stack_last_prev(t_node *stk);
 t_node	*ft_get_stack_last(t_node *stk);
 int		ft_stack_ind_max(t_node *stk);
 int		ft_stack_ind_min(t_node *stk);
 int		ft_stack_length(t_node *stk);
 int		ft_stack_median(t_node *stk);
-bool	ft_is_above_median(t_node *stk, int index);
+bool	ft_is_above_median(t_node *stk, int ind);
 
 //lst operations
 

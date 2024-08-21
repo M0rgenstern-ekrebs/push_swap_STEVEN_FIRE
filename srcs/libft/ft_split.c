@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:37:29 by ekrebs            #+#    #+#             */
-/*   Updated: 2023/12/04 15:39:05 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 15:07:55 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	**ft_free_everything(char **tab)
 //finds next [c or non c...] ([thing])
 //[if on c finds next non c]
 //[if on non c finds next c]
-//sets i to the index of the next [thing] found
+//sets i to the ind of the next [thing] found
 //returns 1 if done
 //returns 0 if stumbled upon '\0' (end of s)
 //return -42 when en of word but not end of s

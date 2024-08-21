@@ -6,11 +6,11 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:41:16 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 18:55:39 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 16:36:16 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 /**
  * brief : if (here > next) : fuck you

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:45:46 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/20 11:51:43 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/21 13:31:05 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "error.h"
 
-void ft_translate_error(t_error_code err)
+static void	ft_translate_error(t_error_code err)
 {
 	if (err == ERR_PARSING)
 		ft_printf("\t (ERR_PARSING)\n");
@@ -21,6 +21,11 @@ void ft_translate_error(t_error_code err)
 		ft_printf("\t (ERR_PARSING)\n");
 }
 
+/**
+ * 
+ * brief : if verbose, displays useful info
+ * if not, returns ERR if error
+ */
 t_exit_status	ft_error(t_error_code err)
 {
 	unsigned char	ret_value;

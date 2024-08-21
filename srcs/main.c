@@ -6,11 +6,30 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:54 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/20 20:10:51 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 20:08:45 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static t_exit_status ft_check_verbose_end(t_node *stk_a, const char *name)
+{
+	if (VERBOSE)
+	{
+		if (ft_stack_is_sorted_strict_ascending(stk_a) != true)
+		{
+			ft_printf("\n(%s): FAILURE\n", name);
+			return (ERR);
+		}
+		else
+		{
+			ft_printf("\t  => is now sorted\n");
+			ft_printf("\n(%s): is SUCCESS\n", name);
+			return (SUCCESS);
+		}
+	}
+	return (SUCCESS);
+}
 
 /**
  * brief : push_swap 
@@ -26,9 +45,10 @@
  */
 int	main(int argc, char *argv[])
 {
-	t_node	*stk_a;
-	t_node	*stk_b;
-	
+	t_exit_status	exit;
+	t_node			*stk_a;
+	t_node			*stk_b;
+
 	if (VERBOSE)
 		ft_printf("\n(%s)\n", __func__);
 	if (argc == 0 + 1)
@@ -42,11 +62,10 @@ int	main(int argc, char *argv[])
 	if (ft_stack_is_sorted_strict_ascending(stk_a) != true)
 	{
 		if (argc == 3 + 1)
-			ft_sort_three(&stk_a);
+			ft_sort_three(&stk_a, "A");
 		else
 			ft_sort(&stk_a, &stk_b);
 	}
-	if (VERBOSE)
-		ft_printf("\n(%s): SUCCESS\n", __func__);
-	return (ft_free_stack(stk_a), ft_free_stack(stk_b), EXIT_SUCCESS);
+	exit = ft_check_verbose_end(stk_a, __func__);
+	return (ft_free_stack(stk_a), ft_free_stack(stk_b), exit);
 }

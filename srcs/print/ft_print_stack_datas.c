@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 18:12:58 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 12:06:59 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 20:07:01 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ void	ft_print_stack_datas(t_node *stk, char *name)
 	t_node	*tmp;
 	int		i;
 
-	//ft_printf("\n\t(%s):\n\n", __func__);
 	tmp = stk;
-	ft_printf("\t    ───────── %s ──────────\n", name);
+	ft_printf("\t    ───────── %s ──────────", name);
+	ft_printf("──────────────────────────────────────────────\n");
 	ft_printf("\t   │   i   │   value      │    i_target  │  push_cost  │");
 	ft_printf("    >= median?  │\n");
 	ft_printf("\t   │───────│──────────────│──────────────│─────────────│");
 	ft_printf("────────────────│\n");
-	if(!tmp)
+	if (!tmp)
 		ft_printf("\t       i s   n  u  l  l\n");
 	i = 0;
 	while (tmp)

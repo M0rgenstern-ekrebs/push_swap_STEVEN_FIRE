@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_both_body.c                               :+:      :+:    :+:   */
+/*   ft_print_both_stacks_bodies.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 19:34:45 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 12:50:22 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 20:08:23 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ static void	ft_print_body_b(t_node *a, t_node *b, int i, t_pbi *infos)
 	ft_print_how_many_tabs(infos->nb_printed);
 	if (!a)
 	{
-		if (infos->absence_a == 1)
-			ft_printf("\t\t\t\t\t\t\t");
+		if (infos->absence_a >= 1)
+			ft_printf("\t\t\t");
 		infos->absence_a++;
 	}
 	ft_printf("\t│   %d\t    %d", i, b->value);
@@ -63,7 +63,7 @@ void	ft_print_both_body(t_node *a, t_node *b)
 		if (a)
 		{
 			ft_print_body_a(a, b, i, &infos);
-			a = a->next;	
+			a = a->next;
 		}
 		if (b)
 		{

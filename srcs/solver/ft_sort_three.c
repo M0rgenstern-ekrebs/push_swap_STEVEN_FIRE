@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:13:13 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 20:07:05 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 19:01:02 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,12 @@ static void	case_ind_max_2(t_node **stk)
  * brief sorts the three elements of a stack (of exactly 3 elements)
  * 
  */
-void	ft_sort_three(t_node **stk)
+void	ft_sort_three(t_node **stk, char *name)
 {
 	int	ind_max;
 
 	if (VERBOSE)
-		ft_printf("\n(%s):\n", __func__);
+		ft_printf("\n(%s)(%s):\n", __func__, name);
 	ind_max = ft_stack_ind_max(*stk);
 	if (ind_max == 0)
 		case_ind_max_0(stk);
@@ -100,35 +100,5 @@ void	ft_sort_three(t_node **stk)
 		case_ind_max_1(stk);
 	else if (ind_max == 2)
 		case_ind_max_2(stk);
-	if (VERBOSE)
-	{
-		ft_print_stack(*stk, "A");
-		if(ft_stack_is_sorted_strict_ascending(*stk) == true)
-			ft_printf("\t  => is now sorted (sort_three)\n");
-		else
-			ft_printf("\t  => SORT_FAILURE\n");
-	}
-	return ;
-}
-
-/**
- * brief sorts the three elements of a stack (of exactly 3 elements)
- * 
- */
-void	ft_sort_sort_three(t_node **stk)
-{
-	int	ind_max;
-
-	if (VERBOSE)
-		ft_printf("\n(%s):\n", __func__);
-	ind_max = ft_stack_ind_max(*stk);
-	if (ind_max == 0)
-		case_ind_max_0(stk);
-	else if (ind_max == 1)
-		case_ind_max_1(stk);
-	else if (ind_max == 2)
-		case_ind_max_2(stk);
-	if (VERBOSE)
-		ft_print_stack(*stk, "A");
 	return ;
 }

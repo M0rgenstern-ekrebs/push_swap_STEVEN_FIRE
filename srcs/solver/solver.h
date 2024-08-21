@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:50 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/20 20:28:57 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 19:51:30 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,18 @@
 //sorts
 
 void	ft_sort(t_node **stk_a, t_node **stk_b);
-void	ft_sort_sort_three(t_node **stk);
+void	ft_sort_three(t_node **stk, char *name);
 
-void	ft_sort_three(t_node **stk);
+// sort_operations
+
+void	ft_naive_push(t_node **stk_a, t_node **stk_b);
+void	ft_naive_counter_push(t_node **stk_a, t_node **stk_b);
+
+int		ft_rotator(t_node **stk_a, t_node **stk_b,	\
+t_node *cheapest, t_node *target);
+
+int		ft_counter_rotator(t_node **stk_a, t_node **stk_b,	\
+t_node *cheapest, t_node *target);
 
 //utils
 

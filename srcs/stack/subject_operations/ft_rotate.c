@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:43 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/21 13:00:54 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 19:55:40 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * rotate <== 
  * Ex : 120 -> 201
  * 
- *  */ 
+ * */
 void	ft_rotate(t_node **stk)
 {
 	t_node	*tmp;
@@ -29,30 +29,45 @@ void	ft_rotate(t_node **stk)
 	tail->next = tmp;
 }
 
+/**
+ * rotate <== 
+ * Ex : 120 -> 201
+ * 
+ * */
 void	ft_ra(t_node **stk_a)
 {
 	ft_rotate(stk_a);
 	if (VERBOSE)
-		ft_printf("\t\t\t\t\t (A  ->  RA)\n");
+		ft_printf("\t\t|\t\t\t(A   <=  RA)\n");
 	else
 		ft_putstr_fd("ra\n", 1);
 }
 
+/**
+ * rotate <== 
+ * Ex : 120 -> 201
+ * 
+ * */
 void	ft_rb(t_node **stk_b)
 {
 	ft_rotate(stk_b);
 	if (VERBOSE)
-		ft_printf("\t\t\t\t\t (B  ->  RB)\n");
+		ft_printf("\t\t\t\t\t(B   <=  RB)\t\t\t|\n");
 	else
 		ft_putstr_fd("rb\n", 1);
 }
 
+/**
+ * rotate <== 
+ * Ex : 120 -> 201
+ * 
+ * */
 void	ft_rr(t_node **stk_a, t_node **stk_b)
 {
 	ft_rotate(stk_a);
 	ft_rotate(stk_b);
 	if (VERBOSE)
-		ft_printf("\t\t\t\t\t (A,B ->  RR)\n");
+		ft_printf("\t\t|\t\t\t(A,B  <=  RR)\t\t\t|\n");
 	else
-	ft_putstr_fd("rr\n", 1);
+		ft_putstr_fd("rr\n", 1);
 }

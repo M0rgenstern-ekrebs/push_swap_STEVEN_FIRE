@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_ind_min.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:41:20 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 11:16:20 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/21 19:56:31 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_stack_ind_min(t_node *stk)
 	ind_min = 0;
 	while (tmp)
 	{
-		if (tmp->value < min) 
+		if (tmp->value < min)
 		{
 			ind_min = i;
 			min = tmp->value;

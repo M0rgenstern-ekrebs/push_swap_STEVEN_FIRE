@@ -6,16 +6,16 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:41:07 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 12:53:41 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 19:45:32 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 /**
  * 
  * brief : target is the biggest smaller than stk_a_value in stk_b
- * returns the index of the target;
+ * returns the ind of the target;
  * 
  * if no good target, do I want the first or last ? here I chose first
  * // -> if no match, biggets number in stk_b ???
@@ -31,7 +31,7 @@ static int	ft_ind_target(int stk_a_value, t_node *stk_b)
 	ind_target = 0;
 	b = stk_b;
 	value_target = LONG_MIN;
-	while(b)
+	while (b)
 	{
 		if (b->value < stk_a_value && b->value > value_target)
 		{
@@ -48,20 +48,18 @@ static int	ft_ind_target(int stk_a_value, t_node *stk_b)
 
 /**
  * 
- * brief : for each a in stk_a, sets a->ind_target to the index of target in stk_b.
- * target is the biggest smaller value in stk_b
+ * brief : for each a in stk_a, sets a->ind_target to the ind of target in stk_b.
+ * target is the biggest amongst the values smaller than a in stk_b
  * 
  */
 void	ft_stack_set_target_nodes(t_node *stk_a, t_node *stk_b)
 {
-	t_node	*a = stk_a;
+	t_node	*a;
 	int		i;
 
+	a = stk_a;
 	if (VERBOSE)
-	{
-		ft_printf("\t(%s):\n\n", __func__);
-		ft_print_both_stacks(stk_a, stk_b);
-	}
+		ft_printf("\t(%s):\n", __func__);
 	i = 0;
 	while (a)
 	{
@@ -69,7 +67,5 @@ void	ft_stack_set_target_nodes(t_node *stk_a, t_node *stk_b)
 		i++;
 		a = a->next;
 	}
-	if (VERBOSE)
-		ft_print_stack_datas(stk_a, "A");
 	return ;
 }
