@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:41:07 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 22:03:58 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 22:10:44 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,7 @@ static int	ft_ind_target(int stk_a_value, t_node *stk_b)
 		b = b->next;
 	}
 	if (value_target == LONG_MIN)
-	{
-		ft_printf("/t/t/twoah\n");
 		ind_target = ft_stack_ind_max(stk_b);
-	}
 	return (ind_target);
 }
 

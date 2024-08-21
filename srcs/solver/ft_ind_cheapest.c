@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 20:27:49 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 22:03:31 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 22:59:44 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,54 +17,20 @@
  * returns the simulated cost to push
  * to push, we rotate both stacks untils both nodes are on top,
  * 
- * we rotate together while we can, 
- * rr if  
+ * we rotate together while we can, hence the overlapp check
+ *  
  * 
  */
-int	ft_cost_to_push(t_node	*a, t_node *stk_a, t_node	*stk_b, int ind_a)
+int	ft_set_cost_to_push(t_node	*a, t_node *stk_a, t_node	*stk_b, int ind_a)
 {
-	int	median_a;
-	int	median_b;
-	int	cost;
-	cost = 1;
-	(void) cost;
-	// int len_a_to_top;
-	// int len_target_to_top;
-
-	median_a = ft_stack_median(stk_a);
-	median_b = ft_stack_median(stk_b);
-	(void) median_a;
-	(void) median_b;
-	(void) a;
-	(void) ind_a;
-	// if (a->ind_target >= median_b)
-	// 	len_target_to_top = (ft_stack_length(stk_b) - a->ind_target) * -1;
-	// else 
-	// 	len_target_to_top = a->ind_target + 1;
-	// if (ind_a >= median_a)
-	// 	len_a_to_top = (ft_stack_length(stk_a) - ind_a) * -1;
-	// else 
-	// 	len_a_to_top = a->ind_target + 1;
-
-	// //prix overlap + prix seul + push
-	// cost = 0;
-	// if ((ind_a >= median_a) && (a->ind_target >= median_b))
-	// {
-		
-	// }
-	// else if (!(ind_a >= median_a) && !(a->ind_target >= median_b))
-	// {
-		
-	// }
-	// else if ((ind_a >= median_a) && !(a->ind_target >= median_b))
-	// {
-		
-	// }
-	// else if (!(ind_a >= median_a) && (a->ind_target >= median_b))
-	// {
-		
-	// }
-	return (cost);
+	a->push_cost = ind_a;
+	if (!ft_is_above_median(stk_a, ind_a))
+		a->push_cost = ft_stack_length(stk_a) - ind_a;
+	else if (ft_is_above_median(stk_b, a->ind_target))
+		a->push_cost += a->ind_target;
+	else
+		a->push_cost += ft_stack_length(stk_b) - (a->ind_target);
+	return (a->push_cost);
 }
 
 /**
@@ -83,10 +49,11 @@ int	ft_ind_cheapest(t_node *stk_a, t_node *stk_b)
 
 	ind_a = 0;
 	a = stk_a;
-	cheapest_cost = ft_cost_to_push(a, stk_a, stk_b, ind_a);
+	ind_cheapest = 0;
+	cheapest_cost = ft_set_cost_to_push(a, stk_a, stk_b, ind_a);
 	while (a)
 	{
-		cost = ft_cost_to_push(a, stk_a, stk_b, ind_a);
+		cost = ft_set_cost_to_push(a, stk_a, stk_b, ind_a);
 		if (cost < cheapest_cost)
 		{
 			cheapest_cost = cost;
@@ -95,5 +62,7 @@ int	ft_ind_cheapest(t_node *stk_a, t_node *stk_b)
 		ind_a++;
 		a = a->next;
 	}
+	if (VERBOSE)
+		ft_printf("\t  =>CHEAPEST is n %d: cost of %d\n", ind_cheapest, cheapest_cost);
 	return (ind_cheapest);
 }

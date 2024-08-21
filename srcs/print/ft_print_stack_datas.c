@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_stack_datas.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 18:12:58 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 20:15:54 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/20 22:25:21 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_print_stack_datas(t_node *stk, char *name)
 		ft_printf("\t   │   %d\t%d", i, tmp->value);
 		ft_print_how_many_tabs(tmp->value);
 		ft_printf("%d\t\t%d", tmp->ind_target, tmp->push_cost);
-		ft_printf("\t\t%d\n", i >= ft_stack_median(stk));
+		ft_printf("\t\t%d\n", ft_is_above_median(stk, i));
 		i++;
 		tmp = tmp->next;
 	}

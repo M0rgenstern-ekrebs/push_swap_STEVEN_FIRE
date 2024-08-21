@@ -31,6 +31,7 @@ SRCS = 	srcs/main.c		\
 		srcs/stack/stk_operations/ft_stack_ind_min.c					\
 		srcs/stack/stk_operations/ft_stack_length.c						\
 		srcs/stack/stk_operations/ft_stack_median.c						\
+		srcs/stack/stk_operations/ft_is_above_median.c					\
 		\
 		srcs/stack/subject_operations/ft_push.c				\
 		srcs/stack/subject_operations/ft_swap.c				\

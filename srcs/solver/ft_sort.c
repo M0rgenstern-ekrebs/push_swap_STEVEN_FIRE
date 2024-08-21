@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:23:08 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 21:31:11 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/20 22:58:59 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ void	ft_sort(t_node **stk_a, t_node **stk_b)
 		ft_naive_push(stk_a, stk_b);
 		len_a--;
 	}
-	ft_sort_sort_three(stk_a);
-
+	if (len_a == 3)
+		ft_sort_sort_three(stk_a);
 	len_b = ft_stack_length(*stk_b);
 	while (len_b > 0)
 	{
