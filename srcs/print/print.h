@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 18:35:03 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 20:08:10 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 20:12:38 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ void	ft_print_stack_datas(t_node *stk, char *name);
 
 //util
 
-void	ft_print_both_stacks_bodies(t_node *a, t_node *b);
+void	ft_print_stacks_bodies(t_node *a, t_node *b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 16:21:09 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 19:53:37 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 20:14:14 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * pushes cheap above target
  * 
  */
-static void	ft_push_cheapest_above_target(t_node **stk_a, \
+static void	ft_counter_push_cheapest_above_target(t_node **stk_a, \
 t_node **stk_b, t_node *cheapest)
 {
 	t_node	*target;
@@ -58,7 +58,7 @@ t_node **stk_b, t_node *cheapest)
  * then, uses ft_rotator to push cheapest node above its target
  * 
  */
-void	ft_naive_push(t_node **stk_a, t_node **stk_b)
+void	ft_naive_counter_push(t_node **stk_a, t_node **stk_b)
 {
 	t_node	*cheapest;
 	int		ind_cheapest;
@@ -71,7 +71,7 @@ void	ft_naive_push(t_node **stk_a, t_node **stk_b)
 	cheapest->ind = ind_cheapest;
 	if (VERBOSE)
 		ft_print_stack_datas(*stk_a, "A");
-	ft_push_cheapest_above_target(stk_a, stk_b, cheapest);
+	ft_counter_push_cheapest_above_target(stk_a, stk_b, cheapest);
 	if (VERBOSE)
 		ft_print_both_stacks(*stk_a, *stk_b);
 }

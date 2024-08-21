@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 16:35:42 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 19:53:48 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 20:14:21 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static int	solo_rotate_b(t_node **stk, t_node *new_top)
  * 
  *	if I don't pass then complexity test : FIX ME TO INCLUDE MEDIAN OVERLAP
  */
-int	ft_rotator(t_node **stk_a, t_node **stk_b,	\
+int	ft_counter_rotator(t_node **stk_a, t_node **stk_b,	\
 t_node *cheapest, t_node *target)
 {
 	int	moved;

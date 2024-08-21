@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 18:13:08 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 20:04:12 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 20:12:44 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ static void	ft_print_both_headers(void)
 void	ft_print_both_stacks(t_node *stk_a, t_node *stk_b)
 {
 	ft_print_both_headers();
-	ft_print_both_body(stk_a, stk_b);
+	ft_print_stacks_bodies(stk_a, stk_b);
 	ft_print_both_lens(stk_a, stk_b);
 }

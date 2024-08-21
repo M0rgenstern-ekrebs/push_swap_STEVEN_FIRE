@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 19:34:45 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 20:08:23 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 20:11:02 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	ft_print_body_b(t_node *a, t_node *b, int i, t_pbi *infos)
 	ft_printf("\t│   %d\t    %d", i, b->value);
 }
 
-void	ft_print_both_body(t_node *a, t_node *b)
+void	ft_print_stacks_bodies(t_node *a, t_node *b)
 {
 	int		i;
 	t_pbi	infos;

@@ -6,13 +6,13 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:54 by mlapique          #+#    #+#             */
-/*   Updated: 2024/08/21 20:08:45 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/21 20:16:23 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_exit_status ft_check_verbose_end(t_node *stk_a, const char *name)
+static t_exit_status	ft_check_verbose_end(t_node *stk_a, const char *name)
 {
 	if (VERBOSE)
 	{
