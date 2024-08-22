@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:54 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/22 02:30:24 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 16:25:13 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(int argc, char *argv[])
 		if (argc <= 3 + 1)
 			ft_sort_small(&stk_a, argc);
 		else
-			ft_sort(&stk_a, &stk_b);
+			ft_turk_sort(&stk_a, &stk_b);
 	}
 	exit = ft_check_verbose_end(stk_a, __func__);
 	return (ft_free_stack(stk_a), ft_free_stack(stk_b), exit);

@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_min_on_top.c                                :+:      :+:    :+:   */
+/*   ft_set_current_index.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 00:24:11 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/22 18:43:56 by ekrebs           ###   ########.fr       */
+/*   Created: 2024/08/22 14:02:41 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/08/22 16:25:13 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_put_min_on_top(t_node **stk)
+/**
+ * 
+ * sets its current index to each node in stk
+ * 
+ */
+void	ft_set_current_index(t_node *stk)
 {
-	t_node	*min;
+	int	i;
+	int	median;
 
-	if (VERBOSE)
-		ft_printf("\n(%s):\n", __func__);
-	min = ft_node_min(*stk);
-	if (ft_is_above_median(*stk, min->ind))
+	i = 0;
+	if (!stk)
+		return ;
+	median = ft_stack_len(stk) / 2;
+	while (stk)
 	{
-		while (*stk != min)
-		{
-			ft_ra(stk);
-		}
-	}
-	else
-	{
-		while (*stk != min)
-		{
-			ft_rva(stk);
-		}
+		stk->ind = i;
+		if (i <= median)
+			stk->above_median = true;
+		else
+			stk->above_median = false;
+		stk = stk->next;
+		++i;
 	}
 }

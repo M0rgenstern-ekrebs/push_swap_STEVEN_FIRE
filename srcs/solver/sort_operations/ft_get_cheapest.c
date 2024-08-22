@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_min_on_top.c                                :+:      :+:    :+:   */
+/*   ft_set_cheapest.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 00:24:11 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/22 18:43:56 by ekrebs           ###   ########.fr       */
+/*   Created: 2024/08/22 16:22:40 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/08/22 16:32:55 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_put_min_on_top(t_node **stk)
+t_node	*ft_get_cheapest(t_node *stack)
 {
-	t_node	*min;
-
-	if (VERBOSE)
-		ft_printf("\n(%s):\n", __func__);
-	min = ft_node_min(*stk);
-	if (ft_is_above_median(*stk, min->ind))
+	if (!stack)
+		return (NULL);
+	while (stack)
 	{
-		while (*stk != min)
-		{
-			ft_ra(stk);
-		}
+		if (stack->cheapest)
+			return (stack);
+		stack = stack->next;
 	}
-	else
-	{
-		while (*stk != min)
-		{
-			ft_rva(stk);
-		}
-	}
+	return (NULL);
 }

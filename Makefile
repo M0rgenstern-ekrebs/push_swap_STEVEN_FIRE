@@ -1,5 +1,5 @@
 NAME = push_swap
-VERBOSE = -D VERBOSE=0 -D WARNING=0
+VERBOSE = -D VERBOSE=1 -D WARNING=0
 AR = srcs/libft/libft.a
 
 CC = cc
@@ -17,21 +17,22 @@ SRCS = 	srcs/main.c		\
 		\
 		\
 		srcs/solver/ft_sort_three.c					\
-		srcs/solver/ft_sort.c						\
+		srcs/solver/ft_turk_sort.c					\
 		srcs/solver/ft_sort_small.c					\
 		\
-		srcs/solver/utils/ft_ind_cheapest.c								\
-		srcs/solver/utils/ft_stack_set_target_nodes_closest_bigger.c	\
-		srcs/solver/utils/ft_stack_set_target_nodes_closest_smaller.c	\
+		srcs/solver/sort_operations/ft_init_nodes_b.c	\
+		srcs/solver/sort_operations/ft_inti_nodes_a.c	\
+		srcs/solver/sort_operations/ft_move_a_to_b.c	\
+		srcs/solver/sort_operations/ft_move_b_to_a.c	\
+		srcs/solver/sort_operations/ft_prep_push_a.c	\
+		srcs/solver/sort_operations/ft_prep_push_b.c	\
+		srcs/solver/sort_operations/ft_get_cheapest.c	\
+		\
+		\
 		srcs/solver/utils/ft_stack_is_sorted_strict_ascending.c			\
 		srcs/solver/utils/ft_push_the_firsts.c		\
 		srcs/solver/utils/ft_put_min_on_top.c		\
-		srcs/solver/utils/ft_set_cost_to_push.c		\
-		\
-		srcs/solver/sort_operations/ft_naive_counter_push.c	\
-		srcs/solver/sort_operations/ft_naive_push.c			\
-		srcs/solver/sort_operations/ft_rotator.c			\
-		srcs/solver/sort_operations/ft_counter_rotator.c	\
+		srcs/solver/utils/ft_set_current_index.c	\
 		\
 		\
 		srcs/stack/lst_operations/ft_lst_addback.c	\
@@ -45,11 +46,12 @@ SRCS = 	srcs/main.c		\
 		srcs/stack/stk_operations/ft_get_stack_last.c				\
 		srcs/stack/stk_operations/ft_stack_ind_max.c				\
 		srcs/stack/stk_operations/ft_stack_ind_min.c				\
-		srcs/stack/stk_operations/ft_stack_length.c					\
+		srcs/stack/stk_operations/ft_stack_len.c					\
 		srcs/stack/stk_operations/ft_stack_median.c					\
 		srcs/stack/stk_operations/ft_is_above_median.c				\
-		srcs/stack/stk_operations/ft_stack_get_min.c				\
-		srcs/stack/stk_operations/ft_stack_get_max.c				\
+		srcs/stack/stk_operations/ft_node_min.c				\
+		srcs/stack/stk_operations/ft_node_max.c				\
+		srcs/stack/stk_operations/ft_get_node_with_value.c			\
 		\
 		srcs/stack/subject_operations/ft_push.c				\
 		srcs/stack/subject_operations/ft_swap.c				\

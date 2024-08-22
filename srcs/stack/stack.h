@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 18:27:05 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/22 00:21:26 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 16:25:13 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ typedef struct s_node
 	int				value;
 	int				ind;
 	int				push_cost;
-	int				ind_target;
+	struct s_node	*target;
 	struct s_node	*next;
+	bool			above_median;
+	bool			cheapest;
 }				t_node;
 
 //subject operations
@@ -58,15 +60,16 @@ void	ft_pb(t_node **stk_a, t_node **stk_b);
 
 void	ft_free_stack(t_node *stk);
 t_node	*ft_get_node_i(t_node *stk, int ind);
+t_node	*ft_get_node_with_value(t_node *stk, int value);
 t_node	*ft_get_stack_last_prev(t_node *stk);
 t_node	*ft_get_stack_last(t_node *stk);
+bool	ft_is_above_median(t_node *stk, int ind);
+t_node	*ft_node_max(t_node *stk);
+t_node	*ft_node_min(t_node *stk);
 int		ft_stack_ind_max(t_node *stk);
 int		ft_stack_ind_min(t_node *stk);
-int		ft_stack_length(t_node *stk);
+int		ft_stack_len(t_node *stk);
 int		ft_stack_median(t_node *stk);
-bool	ft_is_above_median(t_node *stk, int ind);
-t_node	*ft_stack_get_max(t_node *stk);
-t_node	*ft_stack_get_min(t_node *stk);
 
 //lst operations
 

@@ -6,13 +6,13 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 18:12:58 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 20:07:01 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/22 18:50:45 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_print_how_many_tabs(int displayed_number)
+static void	ft_print_how_many_tabs(int displayed_number)
 {
 	if (displayed_number > 9999999 || displayed_number < -999999)
 		ft_printf("\t");
@@ -20,18 +20,12 @@ void	ft_print_how_many_tabs(int displayed_number)
 		ft_printf("\t\t");
 }
 
-void	ft_print_stack_datas(t_node *stk, char *name)
+static void	ft_print_datas(t_node *stk)
 {
 	t_node	*tmp;
 	int		i;
 
 	tmp = stk;
-	ft_printf("\t    ───────── %s ──────────", name);
-	ft_printf("──────────────────────────────────────────────\n");
-	ft_printf("\t   │   i   │   value      │    i_target  │  push_cost  │");
-	ft_printf("    >= median?  │\n");
-	ft_printf("\t   │───────│──────────────│──────────────│─────────────│");
-	ft_printf("────────────────│\n");
 	if (!tmp)
 		ft_printf("\t       i s   n  u  l  l\n");
 	i = 0;
@@ -39,11 +33,26 @@ void	ft_print_stack_datas(t_node *stk, char *name)
 	{
 		ft_printf("\t   │   %d\t%d", i, tmp->value);
 		ft_print_how_many_tabs(tmp->value);
-		ft_printf("%d\t\t%d", tmp->ind_target, tmp->push_cost);
+		if (tmp->target)
+			ft_printf("%d\t\t", tmp->target->ind);
+		else
+			ft_printf("-1\t\t");
+		ft_printf("%d", tmp->push_cost);
 		ft_printf("\t\t%d\n", ft_is_above_median(stk, i));
 		i++;
 		tmp = tmp->next;
 	}
-	ft_printf("\t  len %s : %d\n", name, ft_stack_length(stk));
+}
+
+void	ft_print_stack_datas(t_node *stk, char *name)
+{
+	ft_printf("\t    ───────── %s ──────────", name);
+	ft_printf("──────────────────────────────────────────────\n");
+	ft_printf("\t   │   i   │   value      │    i_target  │  push_cost  │");
+	ft_printf("    >= median?  │\n");
+	ft_printf("\t   │───────│──────────────│──────────────│─────────────│");
+	ft_printf("────────────────│\n");
+	ft_print_datas(stk);
+	ft_printf("\t  len %s : %d\n", name, ft_stack_len(stk));
 	ft_printf("\t  med %s : %d\n", name, ft_stack_median(stk));
 }

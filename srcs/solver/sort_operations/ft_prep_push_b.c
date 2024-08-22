@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_get_min.c                                 :+:      :+:    :+:   */
+/*   ft_prep_push_b.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 00:08:56 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/22 02:31:14 by m0rgenstern      ###   ########.fr       */
+/*   Created: 2024/08/22 16:26:52 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/08/22 18:01:24 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stack.h"
+#include "../../push_swap.h"
 
-t_node	*ft_stack_get_min(t_node *stk)
+void	ft_prep_for_push_b(t_node **stack, t_node *top)
 {
-	t_node	*tmp;
-	t_node	*min;
-	int		i;
-
-	tmp = stk;
-	min = tmp;
-	i = 0;
-	while (tmp)
+	while (*stack != top)
 	{
-		if (tmp->value < min->value)
-		{
-			min = tmp;
-			min->ind = i;
-		}
-		i++;
-		tmp = tmp->next;
+		if (top->above_median)
+			ft_rb(stack);
+		else
+			ft_rvb(stack);
 	}
-	return (min);
 }

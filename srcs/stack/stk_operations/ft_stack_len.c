@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_get_max.c                                 :+:      :+:    :+:   */
+/*   ft_stack_len.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 00:11:53 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/22 02:30:58 by m0rgenstern      ###   ########.fr       */
+/*   Created: 2024/08/19 20:41:13 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/08/22 13:48:25 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../stack.h"
 
-t_node	*ft_stack_get_max(t_node *stk)
+int	ft_stack_len(t_node *stk)
 {
 	t_node	*tmp;
-	t_node	*max;
-	int		i;
+	int		len;
 
+	len = 0;
 	tmp = stk;
-	max = tmp;
-	i = 0;
 	while (tmp)
 	{
-		if (tmp->value > max->value)
-		{
-			max = tmp;
-			max->ind = i;
-		}
-		i++;
+		len++;
 		tmp = tmp->next;
 	}
-	return (max);
+	return (len);
 }

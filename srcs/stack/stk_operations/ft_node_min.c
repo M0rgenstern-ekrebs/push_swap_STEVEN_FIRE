@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_length.c                                  :+:      :+:    :+:   */
+/*   ft_stack_get_min.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 20:41:13 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/20 13:12:50 by ekrebs           ###   ########.fr       */
+/*   Created: 2024/08/22 00:08:56 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/22 14:36:45 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../stack.h"
 
-int	ft_stack_length(t_node *stk)
+t_node	*ft_node_min(t_node *stk)
 {
 	t_node	*tmp;
-	int		len;
+	t_node	*min;
+	int		i;
 
-	len = 0;
 	tmp = stk;
+	min = tmp;
+	i = 0;
 	while (tmp)
 	{
-		len++;
+		if (tmp->value < min->value)
+		{
+			min = tmp;
+			min->ind = i;
+		}
+		i++;
 		tmp = tmp->next;
 	}
-	return (len);
+	return (min);
 }

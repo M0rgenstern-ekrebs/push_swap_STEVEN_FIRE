@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 07:40:30 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/21 15:07:55 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/22 16:25:13 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ t_node	*ft_lst_new(int nb)
 	new->value = nb;
 	new->ind = 0;
 	new->push_cost = -1;
-	new->ind_target = -1;
+	new->target = NULL;
+	new->above_median = false;
 	new->next = NULL;
 	return (new);
 }

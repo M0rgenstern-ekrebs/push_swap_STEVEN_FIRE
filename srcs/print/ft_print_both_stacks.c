@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 18:13:08 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 20:12:44 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/22 13:54:02 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	ft_print_both_lens(t_node *stk_a, t_node *stk_b)
 {
-	ft_printf("\t  len A : %d", ft_stack_length(stk_a));
-	ft_printf("\t\t\t\t\t  len B : %d", ft_stack_length(stk_b));
+	ft_printf("\t  len A : %d", ft_stack_len(stk_a));
+	ft_printf("\t\t\t\t\t  len B : %d", ft_stack_len(stk_b));
 	ft_printf("\n");
 }
 

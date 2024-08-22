@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_min_on_top.c                                :+:      :+:    :+:   */
+/*   ft_stack_get_max.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 00:24:11 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/22 18:43:56 by ekrebs           ###   ########.fr       */
+/*   Created: 2024/08/22 00:11:53 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/22 14:36:16 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../stack.h"
 
-void	ft_put_min_on_top(t_node **stk)
+t_node	*ft_node_max(t_node *stk)
 {
-	t_node	*min;
+	t_node	*tmp;
+	t_node	*max;
+	int		i;
 
-	if (VERBOSE)
-		ft_printf("\n(%s):\n", __func__);
-	min = ft_node_min(*stk);
-	if (ft_is_above_median(*stk, min->ind))
+	tmp = stk;
+	max = tmp;
+	i = 0;
+	while (tmp)
 	{
-		while (*stk != min)
+		if (tmp->value > max->value)
 		{
-			ft_ra(stk);
+			max = tmp;
+			max->ind = i;
 		}
+		i++;
+		tmp = tmp->next;
 	}
-	else
-	{
-		while (*stk != min)
-		{
-			ft_rva(stk);
-		}
-	}
+	return (max);
 }

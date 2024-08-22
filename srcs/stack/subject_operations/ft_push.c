@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:39:25 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 22:05:03 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 16:25:13 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_push(t_node **src, t_node **dest)
 			ft_printf("\n\t (%s) just done an Oopsie\n", __func__);
 		return ;
 	}
-	fa->ind_target = -1;
+	fa->target = NULL;
 	fa->push_cost = -1;
 	(*src) = fa->next;
 	(*dest) = fa;

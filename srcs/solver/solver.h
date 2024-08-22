@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solver.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:50 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/22 02:32:01 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 16:42:58 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,19 @@
 
 //sorts
 
-void	ft_sort(t_node **stk_a, t_node **stk_b);
 void	ft_sort_three(t_node **stk, char *name);
 void	ft_sort_small(t_node **stk_a, int argc);
+void	ft_set_current_index(t_node *stk);
+void	ft_turk_sort(t_node **stk_a, t_node **stk_b);
 
 // sort_operations
-
-void	ft_naive_push(t_node **stk_a, t_node **stk_b);
-void	ft_naive_counter_push(t_node **stk_a, t_node **stk_b);
-int		ft_rotator(t_node **stk_a, t_node **stk_b,	\
-t_node *cheapest, t_node *target);
-int		ft_counter_rotator(t_node **stk_a, t_node **stk_b,	\
-t_node *cheapest, t_node *target);
+t_node	*ft_get_cheapest(t_node *stack);
+void	ft_init_nodes_b(t_node *a, t_node *b);
+void	ft_init_nodes_a(t_node *a, t_node *b);
+void	ft_move_a_to_b(t_node **a, t_node **b);
+void	ft_move_b_to_a(t_node **a, t_node **b);
+void	ft_prep_for_push_a(t_node **stack, t_node *top);
+void	ft_prep_for_push_b(t_node **stack, t_node *top);
 
 //utils
 

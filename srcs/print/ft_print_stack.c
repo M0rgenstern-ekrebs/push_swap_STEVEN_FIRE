@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 09:11:41 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/21 19:58:33 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/22 13:53:40 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ void	ft_print_stack(t_node *stk, char *name)
 		i++;
 		tmp = tmp->next;
 	}
-	ft_printf("%s  len %d\n", spaces, ft_stack_length(stk));
+	ft_printf("%s  len %d\n", spaces, ft_stack_len(stk));
 }
