@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:54 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 22:07:40 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 02:30:24 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,16 @@
 
 static t_exit_status	ft_check_verbose_end(t_node *stk_a, const char *name)
 {
+	if (ft_stack_is_sorted_strict_ascending(stk_a) != true)
+	{
+		if (VERBOSE)
+			ft_printf("\n(%s): FAILURE\n", name);
+		return (ERR);
+	}
 	if (VERBOSE)
 	{
-		if (ft_stack_is_sorted_strict_ascending(stk_a) != true)
-		{
-			ft_printf("\n(%s): FAILURE\n", name);
-			return (ERR);
-		}
-		else
-		{
-			ft_printf("\t  => is now sorted\n");
-			ft_printf("\n(%s): is SUCCESS\n", name);
-			return (SUCCESS);
-		}
+		ft_printf("\t  => is now sorted\n");
+		ft_printf("\n(%s): is SUCCESS\n", name);
 	}
 	return (SUCCESS);
 }

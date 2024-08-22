@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 18:34:13 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 13:30:21 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/22 02:26:21 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,15 @@
  * 
  */
 #  define VERBOSE 0
+# endif
+
+# ifndef WARNING
+/**
+ * brief : display operations in a human readable form on STDOUT
+ * toggle it in Makefile:l2 'VERBOSE = -D VERBOSE=1'
+ * 
+ */
+#  define WARNING 0
 # endif
 
 typedef enum e_exit_status

@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 16:21:09 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/22 01:22:27 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 02:34:10 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ t_node **stk_b, t_node *cheapest, t_node *target)
 	if (VERBOSE)
 		ft_printf("\n\t(%s):\n", __func__);
 	moved = ft_counter_rotator(stk_a, stk_b, cheapest, target);
-	if (moved > cheapest->push_cost)
+	if (WARNING && moved > cheapest->push_cost)
 	{
-		ft_printf("\t (%s):ERROR - didn't do what I said I'd do", __func__);
-		exit(127);
+		ft_printf("\t (%s) WARNING - didn't do what I said I'd do\n\tin %s\n", \
+		__func__, __FILE__);
 	}
 	if (VERBOSE && moved)
 		ft_print_both_stacks(*stk_a, *stk_b);

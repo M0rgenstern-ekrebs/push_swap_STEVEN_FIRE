@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:23:08 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/22 00:53:20 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 02:32:34 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_verbose_check(t_node *stk_a)
 	}
 }
 
-static void ft_push_sort_a_to_b(t_node **stk_a, t_node **stk_b)
+static void	ft_push_sort_a_to_b(t_node **stk_a, t_node **stk_b)
 {
 	int	len_a;
 
@@ -44,7 +44,7 @@ static void ft_push_sort_a_to_b(t_node **stk_a, t_node **stk_b)
 	}
 }
 
-static void ft_push_sort_b_to_a(t_node **stk_a, t_node **stk_b)
+static void	ft_push_sort_b_to_a(t_node **stk_a, t_node **stk_b)
 {
 	int	len_b;
 

@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 19:34:45 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/22 01:27:23 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 02:36:03 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ static int	ft_print_body_a(t_node *a, t_node *b, int i, t_pbi *infos)
 	{
 		if (infos->absence_b == 1)
 		{
-			ft_printf("\t\t\t     B  is  n u l l");
+			ft_print_how_many_tabs(infos->nb_printed);
+			ft_printf("\t     B  is  n u l l");
 		}
 		if (infos->absence_b >= 0)
 			infos->absence_b++;
@@ -43,7 +44,7 @@ static void	ft_print_body_b(t_node *a, t_node *b, int i, t_pbi *infos)
 	{
 		if (infos->absence_a == 1)
 		{
-		 	ft_printf("\t        A  is  n u l l");
+			ft_printf("\t        A  is  n u l l");
 		}
 		else
 			ft_printf("\t\t\t");

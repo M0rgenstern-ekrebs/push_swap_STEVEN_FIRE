@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:50 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/22 00:32:16 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 02:32:01 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,6 @@ void	ft_stack_set_target_nodes_closest_bigger(t_node *stk_a,	\
 t_node *stk_b);
 void	ft_stack_set_target_nodes_closest_smaller(t_node *stk_a,	\
 t_node *stk_b);
+int		ft_set_cost_to_push(t_node	*a, t_node *stk_a,	\
+t_node *stk_b, int ind_a);
 #endif

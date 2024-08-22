@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 16:20:26 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 23:02:12 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 01:46:32 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,17 +105,15 @@ t_node *cheapest, t_node *target)
 	{
 		while (*stk_b != target && *stk_a != cheapest && moved++)
 			ft_rr(stk_a, stk_b);
-		if (VERBOSE && moved > 1)
-			ft_print_both_stacks(*stk_a, *stk_b);
 	}
 	else if (!ft_is_above_median(*stk_a, cheapest->ind) \
 			&& !ft_is_above_median(*stk_b, target->ind))
 	{
 		while (*stk_b != target && *stk_a != cheapest && moved++)
 			ft_rvrv(stk_a, stk_b);
-		if (VERBOSE && moved > 1)
-			ft_print_both_stacks(*stk_a, *stk_b);
 	}
+	if (VERBOSE && moved > 1)
+		ft_print_both_stacks(*stk_a, *stk_b);
 	moved = 0;
 	moved += solo_rotate_a(stk_a, cheapest);
 	moved += solo_rotate_b(stk_b, target);

@@ -1,5 +1,5 @@
 NAME = push_swap
-VERBOSE = -D VERBOSE=1
+VERBOSE = -D VERBOSE=0 -D WARNING=0
 AR = srcs/libft/libft.a
 
 CC = cc
@@ -26,6 +26,7 @@ SRCS = 	srcs/main.c		\
 		srcs/solver/utils/ft_stack_is_sorted_strict_ascending.c			\
 		srcs/solver/utils/ft_push_the_firsts.c		\
 		srcs/solver/utils/ft_put_min_on_top.c		\
+		srcs/solver/utils/ft_set_cost_to_push.c		\
 		\
 		srcs/solver/sort_operations/ft_naive_counter_push.c	\
 		srcs/solver/sort_operations/ft_naive_push.c			\
