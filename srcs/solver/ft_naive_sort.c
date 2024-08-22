@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_turk_sort.c                                     :+:      :+:    :+:   */
+/*   ft_naive_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 13:47:26 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/22 18:46:58 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/22 22:39:33 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_naive_counter_push(t_node **a, t_node **b)
+static void	ft_naive_counter_push(t_node **a, t_node **b)
 {
 	if (VERBOSE)
 	{
@@ -20,11 +20,9 @@ void	ft_naive_counter_push(t_node **a, t_node **b)
 		ft_printf("\n(%s)\n", __func__);
 	}
 	ft_init_nodes_b(*a, *b);
-	if (VERBOSE)
-	{
-		ft_print_both_stacks(*a, *b);
-	}
 	ft_move_b_to_a(a, b);
+	if (VERBOSE)
+		ft_print_both_stacks(*a, *b);
 }
 
 static void	ft_push_sort_b_to_a(t_node **stk_a, t_node **stk_b)
@@ -37,11 +35,9 @@ static void	ft_push_sort_b_to_a(t_node **stk_a, t_node **stk_b)
 		ft_naive_counter_push(stk_a, stk_b);
 		len_b--;
 	}
-	if (VERBOSE)
-		ft_print_both_stacks(*stk_a, *stk_b);
 }
 
-void	ft_naive_push(t_node **a, t_node **b)
+static void	ft_naive_push(t_node **a, t_node **b)
 {
 	if (VERBOSE)
 	{
@@ -49,11 +45,9 @@ void	ft_naive_push(t_node **a, t_node **b)
 		ft_printf("\n(%s)\n", __func__);
 	}
 	ft_init_nodes_a(*a, *b);
-	if (VERBOSE)
-	{
-		ft_print_both_stacks(*a, *b);
-	}
 	ft_move_a_to_b(a, b);
+	if (VERBOSE)
+		ft_print_both_stacks(*a, *b);
 }
 
 static void	ft_push_sort_a_to_b(t_node **stk_a, t_node **stk_b)
@@ -69,13 +63,15 @@ static void	ft_push_sort_a_to_b(t_node **stk_a, t_node **stk_b)
 	}
 	if (VERBOSE)
 	{
-		ft_printf("\n===============================================\n");
-		ft_printf("\n\t\t\tHalftway there Baby !\n");
-		ft_printf("\n===============================================\n");
+		ft_printf("\n===============================================");
+		ft_printf("================================================\n");
+		ft_printf("\n\t\t\t||\t\tHalftway there Baby !\t\t||\n");
+		ft_printf("\n===============================================");
+		ft_printf("================================================\n");
 	}
 }
 
-void	ft_turk_sort(t_node **stk_a, t_node **stk_b)
+void	ft_naive_sort(t_node **stk_a, t_node **stk_b)
 {
 	ft_push_sort_a_to_b(stk_a, stk_b);
 	ft_sort_three(stk_a, "A");
@@ -86,6 +82,8 @@ void	ft_turk_sort(t_node **stk_a, t_node **stk_b)
 	ft_put_min_on_top(stk_a);
 	if (VERBOSE)
 	{
+		ft_print_both_stacks(*stk_a, *stk_b);
+		ft_printf("\n-------------------------------------");
 		ft_printf("\n\n\n(end): (is it sorted now ?)\n");
 		ft_print_stack(*stk_a, "A");
 		if (ft_stack_is_sorted_strict_ascending(*stk_a) == true)

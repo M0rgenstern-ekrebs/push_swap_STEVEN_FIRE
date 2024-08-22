@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:43 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 21:54:02 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 21:47:34 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_ra(t_node **stk_a)
 {
 	ft_rotate(stk_a);
 	if (VERBOSE)
-		ft_printf("\t\t|\t\t\t(A   <=  RA)\n");
+		ft_printf("\t\t|\t(up)\t\t(A   <=  RA)\t\n");
 	else
 		ft_putstr_fd("ra\n", 1);
 }
@@ -52,7 +52,7 @@ void	ft_rb(t_node **stk_b)
 {
 	ft_rotate(stk_b);
 	if (VERBOSE)
-		ft_printf("\t\t\t\t\t(B   <=  RB)\t\t\t|\n");
+		ft_printf("\t\t\t\t\t(B   <=  RB)\t\t(up)\t|\n");
 	else
 		ft_putstr_fd("rb\n", 1);
 }
@@ -67,7 +67,7 @@ void	ft_rr(t_node **stk_a, t_node **stk_b)
 	ft_rotate(stk_a);
 	ft_rotate(stk_b);
 	if (VERBOSE)
-		ft_printf("\t\t|\t\t\t(A,B  <=  RR)\t\t\t|\n");
+		ft_printf("\t\t|\t\t\t(A,B  <=  RR)\t\t(up)\t|\n");
 	else
 		ft_putstr_fd("rr\n", 1);
 }

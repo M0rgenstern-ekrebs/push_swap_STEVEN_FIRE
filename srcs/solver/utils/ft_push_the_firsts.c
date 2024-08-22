@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 00:29:40 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/22 02:35:25 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/22 21:39:16 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ void	ft_push_the_firsts(t_node **stk_a, t_node **stk_b, int *len_a)
 	int	i;
 
 	if (VERBOSE)
+	{
+		ft_printf("\n-------------------------------------");
 		ft_printf("\n(%s):\n", __func__);
+		ft_print_both_stacks(*stk_a, *stk_b);
+	}
 	i = 0;
 	while (i < 2)
 	{

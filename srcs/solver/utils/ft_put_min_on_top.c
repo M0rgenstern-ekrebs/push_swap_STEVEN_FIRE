@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_min_on_top.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 00:24:11 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/22 18:43:56 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/22 21:53:52 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ void	ft_put_min_on_top(t_node **stk)
 	t_node	*min;
 
 	if (VERBOSE)
+	{
+		ft_printf("\n-------------------------------------");
 		ft_printf("\n(%s):\n", __func__);
+		ft_print_stack(*stk, "A");
+	}
 	min = ft_node_min(*stk);
 	if (ft_is_above_median(*stk, min->ind))
 	{
