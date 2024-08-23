@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:42:54 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/22 22:02:39 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/23 14:14:34 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(int argc, char *argv[])
 		ft_printf("\n(%s)\n", __func__);
 	if (argc == 0 + 1)
 		return (0);
-	if (ft_check_parsing(argv) != SUCCESS)
+	if (ft_check_parsing(argv, argc) != SUCCESS)
 		return (ft_error(ERR_PARSING));
 	stk_a = NULL;
 	stk_b = NULL;

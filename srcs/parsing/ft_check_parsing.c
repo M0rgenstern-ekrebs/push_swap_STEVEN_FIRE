@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 05:33:04 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/21 12:53:05 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/23 14:15:35 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,17 @@ static void	ft_print_args(char *argv[])
 	ft_printf("\n");
 }
 
-t_exit_status	ft_check_parsing(char *argv[])
+t_exit_status	ft_check_parsing(char *argv[], int argc)
 {
-	if (!argv[1][0])
-		return (ERR);
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (!argv[i][0])
+			return (ERR);
+		i++;
+	}
 	if (ft_check_is_int(argv) != SUCCESS)
 		return (ERR);
 	if (ft_check_no_double(argv) != SUCCESS)

@@ -6,12 +6,11 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:32:22 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/21 12:51:52 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/23 13:39:18 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
-#include "../stack/stack.h"
 
 /**
  * brief : ini stk a with argv values

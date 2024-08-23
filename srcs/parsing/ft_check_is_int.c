@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 05:49:41 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/23 12:24:04 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/23 14:18:11 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	check_limits(char *value)
 		return (ERR);
 	len = ft_strlen(value);
 	if (len > 10)
-		return (ERR);
+		return (free(value), ERR);
 	if (len == 10)
 	{
 		if (sign == 1)
