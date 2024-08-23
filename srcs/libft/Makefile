@@ -6,7 +6,7 @@
 #    By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 16:00:28 by ekrebs            #+#    #+#              #
-#    Updated: 2024/07/14 17:42:35 by ekrebs           ###   ########.fr        #
+#    Updated: 2024/08/23 12:25:21 by ekrebs           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,7 @@ OBJS_PRINTF = $(shell ar -t $(DIR_PRTINF))
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 OBJS = $(SRCS:.c=.o) #remplaces the .c by .o s
 

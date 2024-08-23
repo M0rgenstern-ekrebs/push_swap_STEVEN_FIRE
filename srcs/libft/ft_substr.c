@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 19:02:53 by ekrebs            #+#    #+#             */
-/*   Updated: 2023/11/29 11:07:50 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/23 12:37:31 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!new)
 		return (NULL);
 	i = 0;
-	while (s[i] && i < end && i < len)
+	while (s[start + i] && i < end && i < len)
 	{
 		new[i] = s[start + i];
 		i++;

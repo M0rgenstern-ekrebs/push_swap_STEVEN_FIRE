@@ -1,5 +1,5 @@
 NAME = push_swap
-VERBOSE = -D VERBOSE=1 -D WARNING=0
+VERBOSE = -D VERBOSE=0 -D WARNING=0
 AR = srcs/libft/libft.a
 
 CC = cc
