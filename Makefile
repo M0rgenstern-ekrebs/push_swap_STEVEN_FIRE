@@ -17,7 +17,7 @@ SRCS = 	srcs/main.c		\
 		\
 		\
 		srcs/solver/ft_sort_three.c					\
-		srcs/solver/ft_turk_sort.c					\
+		srcs/solver/ft_naive_sort.c					\
 		srcs/solver/ft_sort_small.c					\
 		\
 		srcs/solver/sort_operations/ft_init_nodes_b.c	\
